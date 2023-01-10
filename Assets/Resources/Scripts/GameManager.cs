@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject Obj;
+    [SerializeField] private GameObject PausePanel;
+    [SerializeField] private GameObject Panel;
     [SerializeField] private GameObject ClearPanel;
     [SerializeField] private GameObject UIPanel;
     [SerializeField] private List<GameObject> Interface;
+    [SerializeField] private Transform StartPosition;
+    [SerializeField] private Transform EndPosition;
+
     public static Information Instance;
     
     private void Awake()
@@ -18,11 +22,13 @@ public class GameManager : MonoBehaviour
             return;
         }
     }
+
     public void EndGame()
     {
         Time.timeScale = 1;
         ClearPanel.SetActive(true);
-        UIPanel.transform.position = Vector2.Lerp(UIPanel.transform.position, new Vector2(960, 540), 10.0f);
+        StartCoroutine(Victory());
+        //UIPanel.transform.position = Vector2.Lerp(UIPanel.transform.position, new Vector2(960, 540), 10.0f);
         AudioSource audio = Camera.main.GetComponent<AudioSource>();
         audio.Stop();
         audio.PlayOneShot(Resources.Load("Audio/crash") as AudioClip);
@@ -46,12 +52,12 @@ public class GameManager : MonoBehaviour
     {
         if (Time.timeScale == 0)
         {
-            Obj.SetActive(false);
+            PausePanel.SetActive(false);
             Time.timeScale = 1;
         }
         else
         {
-            Obj.SetActive(true);
+            PausePanel.SetActive(true);
             Time.timeScale = 0;
         }
        
@@ -59,42 +65,31 @@ public class GameManager : MonoBehaviour
 
     public void StageClear()
     {
-        Time.timeScale = 0;
 
-        ClearPanel.SetActive(true);
+        PausePanel.SetActive(true);
+        Panel.SetActive(false);
 
         AudioSource audio = Camera.main.GetComponent<AudioSource>();
         audio.Stop();
         audio.PlayOneShot(Resources.Load("Audio/End Win") as AudioClip);
-        
-        
-    }
-    IEnumerator Victory(int _Score)
-    {
-        Debug.Log("1");
-        yield return new WaitForSeconds(2.0f);
-        Debug.Log("2");
-        AudioSource audio = Camera.main.GetComponent<AudioSource>();
+        StartCoroutine(Victory());
+       
 
-        switch (_Score)
+    }
+
+    public IEnumerator Victory()
+    {
+        float fTime = 0;
+        
+        while (fTime <= 2.0f)
         {
-        case 1:
-        audio.PlayOneShot(Resources.Load("Audio/Hat1") as AudioClip);
-            break;
-        case 2:
-        audio.PlayOneShot(Resources.Load("Audio/Hat1") as AudioClip);
-        yield return new WaitForSeconds(1.0f);
-                audio.PlayOneShot(Resources.Load("Audio/Hat2") as AudioClip);
-            break;
-        case 3:
-        Debug.Log("3");
-                audio.PlayOneShot(Resources.Load("Audio/Hat1") as AudioClip);
-        yield return new WaitForSeconds(1.0f);
-                audio.PlayOneShot(Resources.Load("Audio/Hat2") as AudioClip);
-        yield return new WaitForSeconds(1.0f);
-                audio.PlayOneShot(Resources.Load("Audio/Hat3") as AudioClip);
-            break;
+            fTime += Time.deltaTime;
+            UIPanel.transform.position = Vector3.Lerp(StartPosition.position, EndPosition.position, fTime);
+            yield return null;
         }
+        Time.timeScale = 0;
+        PausePanel.SetActive(true);
+        Panel.SetActive(false);
     }
     public void NextStage()
     {

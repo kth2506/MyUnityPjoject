@@ -11,6 +11,7 @@ public class CinemachineController : MonoBehaviour
     [SerializeField] private List<GameObject> StationList;
     [SerializeField] private GameObject Enemy;
     [SerializeField] private AudioSource TempAudio;
+    [SerializeField] private List<GameObject> BodyList;
     [SerializeField] private List<GameObject> CubeList;
     private GameObject BoomObject;
 
@@ -65,7 +66,7 @@ public class CinemachineController : MonoBehaviour
             dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
             dolly.m_Position = 0.0f;
         }
-
+        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
@@ -91,9 +92,11 @@ public class CinemachineController : MonoBehaviour
                     {
                         StartCoroutine(SlowlyStop());
                         GameObject Obj = Instantiate(BoomObject);
+                        Obj.transform.localScale *= 1.3f;
                         Obj.transform.position = transform.position;
                         GameObject Obj2 = Instantiate(BoomObject);
                         Obj2.transform.position = transform.position + new Vector3(2.0f, 0.0f, 0.0f);
+                        Obj2.transform.localScale *= 1.3f;
 
                     }
                     else
@@ -199,13 +202,16 @@ public class CinemachineController : MonoBehaviour
         if (collision.transform.tag == "Enemy" || collision.transform.tag == "Player")
         {
             Debug.Log("Collision!!");
+            Rigidbody TrainRid = GetComponent<Rigidbody>();
+            TrainRid.AddExplosionForce(2000, transform.position, 20);
             FindObjectOfType<GameManager>().EndGame();
-           GameObject Obj = Instantiate(BoomObject);
+           GameObject Obj = Instantiate(Resources.Load("Prefabs/Explosion") as GameObject);
             Obj.transform.position = transform.position;
-            
-            
+            //https://makerejoicegames.tistory.com/152
+
         }
     }
+
 
     IEnumerator SlowlyStop()
     {

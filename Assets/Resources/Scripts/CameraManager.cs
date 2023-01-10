@@ -15,21 +15,21 @@ public class CameraManager : MonoBehaviour
     }
     // Start is called before the first frame update
    
-    IEnumerator Start()
+    void Start()
     {
         float fTime = 0.0f;
-        while(fTime < 2.0f)
+        while(fTime < 5.0f)
         {
-            fTime += 0.01f;
+            fTime += Time.deltaTime;
             transform.position = Vector3.Lerp(
                 transform.position,
                 Target.position + Offset,
                 Time.deltaTime * 2.0f);
-            yield return null;
         }
         StartCoroutine(Wheel());
     }
 
+    
     IEnumerator Wheel()
     {
         while(true)
@@ -71,7 +71,7 @@ public class CameraManager : MonoBehaviour
                 transform.transform.position
                     = new Vector3(transform.position.x, y, transform.position.z);
             }
-            
+
             yield return null;
         }
         

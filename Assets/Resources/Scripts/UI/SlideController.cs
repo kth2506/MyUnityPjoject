@@ -33,10 +33,6 @@ public class SlideController : MonoBehaviour
         float Offset = MoveCheck ? Vector3.Distance(TargetUITransfrom.position, EndPoint.position) : Vector3.Distance(TargetUITransfrom.position, StartPoint.position);
         return 1 - (Offset / distance);
     }
-    private void Update()
-    {
-        //TargetUITransfrom.position = Vector3.Lerp(StartPoint.position, EndPoint.position, time);
-    }
    
     public IEnumerator SlideInCoroutine_01()
     {
@@ -45,7 +41,6 @@ public class SlideController : MonoBehaviour
         while (fTime <= 1.0f && MoveCheck)
         {
             fTime += Time.deltaTime;
-            //TargetUITransfrom.position = MoveCheck ?  Vector3.Lerp(StartPoint.position, EndPoint.position, fTime) : Vector3.Lerp(EndPoint.position, StartPoint.position, fTime);
             TargetUITransfrom.position = Vector3.Lerp(StartPoint.position, EndPoint.position, fTime);
             yield return null;
         }

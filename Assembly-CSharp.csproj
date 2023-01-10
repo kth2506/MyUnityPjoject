@@ -62,7 +62,6 @@
     <Compile Include="Assets\Resources\Scripts\GameManager.cs" />
     <Compile Include="Assets\Resources\Scripts\UI_Menu.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
-    <Compile Include="Assets\Resources\Scripts\Button.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayerChoice.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\ToggleController.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\SkillInventoryController.cs" />
@@ -82,7 +81,6 @@
     <Compile Include="Assets\Resources\Scripts\FollowCamera.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
     <Compile Include="Assets\Resources\Scripts\PlayerInit.cs" />
-    <Compile Include="Assets\Resources\Scripts\Bullet.cs" />
     <Compile Include="Assets\Resources\DownloadResources\Spline Walker Train\SwtWagon.cs" />
     <Compile Include="Assets\Resources\Scripts\Point.cs" />
     <Compile Include="Assets\Resources\Scripts\Architecture\Object.cs" />
@@ -115,6 +113,7 @@
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
     <Compile Include="Assets\Resources\Scripts\Score.cs" />
     <Compile Include="Assets\Resources\DownloadResources\Spline Walker Train\SplineDecorator.cs" />
+    <Compile Include="Assets\Resources\Scripts\BodyController.cs" />
     <Compile Include="Assets\Resources\Scripts\LoadingBar.cs" />
     <Compile Include="Assets\Resources\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_Translate.cs" />
