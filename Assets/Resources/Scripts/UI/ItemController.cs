@@ -17,6 +17,7 @@ public class ItemController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         transform.position = eventData.position;
         transform.SetParent(Canvas.transform);
         transform.SetAsLastSibling();
+
         transform.localScale = new(0.8f, 0.8f, 1.0f);
     }
 

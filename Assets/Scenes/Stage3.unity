@@ -3774,6 +3774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 925811476}
   duration: 80
+  Star: 0
 --- !u!114 &925811476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7468,6 +7469,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2296169811011144967, guid: c49467dc445389d459651de9433dd9dd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2616788307928279956, guid: c49467dc445389d459651de9433dd9dd, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
@@ -7483,6 +7488,10 @@ PrefabInstance:
     - target: {fileID: 2616788307928279956, guid: c49467dc445389d459651de9433dd9dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252472186235537989, guid: c49467dc445389d459651de9433dd9dd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c49467dc445389d459651de9433dd9dd, type: 3}
@@ -8022,7 +8031,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 918d383b64c1d4043b93676bca57adf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Obj: {fileID: 1289351916}
+  PausePanel: {fileID: 0}
+  Panel: {fileID: 0}
+  ClearPanel: {fileID: 0}
+  UIPanel: {fileID: 0}
+  Interface: []
+  StartPosition: {fileID: 0}
+  EndPosition: {fileID: 0}
 --- !u!4 &1858869568
 Transform:
   m_ObjectHideFlags: 0
@@ -8868,6 +8883,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2296169811011144967, guid: c49467dc445389d459651de9433dd9dd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2616788307928279956, guid: c49467dc445389d459651de9433dd9dd, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -8895,6 +8914,10 @@ PrefabInstance:
     - target: {fileID: 2616788307928279956, guid: c49467dc445389d459651de9433dd9dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252472186235537989, guid: c49467dc445389d459651de9433dd9dd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3394416379917873454, guid: c49467dc445389d459651de9433dd9dd, type: 3}
       propertyPath: m_Name

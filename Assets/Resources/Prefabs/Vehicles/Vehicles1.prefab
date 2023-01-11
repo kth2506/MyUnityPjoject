@@ -897,6 +897,7 @@ MonoBehaviour:
   StationList: []
   Enemy: {fileID: 0}
   TempAudio: {fileID: 0}
+  BodyList: []
   CubeList:
   - {fileID: 2268650223709128244}
   - {fileID: 9222412851525191809}
