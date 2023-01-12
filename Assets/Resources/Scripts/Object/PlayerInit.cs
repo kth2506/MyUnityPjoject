@@ -9,7 +9,7 @@ public class PlayerInit : MonoBehaviour
     void Start()
     {
         info = GameObject.Find("Information").GetComponent<Information>();
-        GameObject Obj = Instantiate(Resources.Load("Prefabs/Vehicles/Vehicles" +info.pIndex.ToString() ) as GameObject);
+        GameObject Obj = Instantiate(Resources.Load("Prefabs/Vehicles/Vehicles" + Information.Instance.GetIndex().ToString() ) as GameObject);
         Obj.transform.position = transform.position;
         Obj.transform.parent = transform;
     }

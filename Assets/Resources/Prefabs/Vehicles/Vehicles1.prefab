@@ -896,8 +896,9 @@ MonoBehaviour:
   target: []
   StationList: []
   Enemy: {fileID: 0}
+  Coin: {fileID: 6662428869203078958, guid: 091d624c886f59e40ac3dc010bd00a5b, type: 3}
+  mesh: []
   TempAudio: {fileID: 0}
-  BodyList: []
   CubeList:
   - {fileID: 2268650223709128244}
   - {fileID: 9222412851525191809}
@@ -907,8 +908,6 @@ MonoBehaviour:
   - {fileID: 8858761964704393743}
   - {fileID: 2716307829085995905}
   - {fileID: 6505952453804483813}
-  gameManager: {fileID: 0}
-  mesh: []
 --- !u!1 &7121502274219263029
 GameObject:
   m_ObjectHideFlags: 0

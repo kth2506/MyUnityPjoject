@@ -11,8 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<GameObject> Interface;
     [SerializeField] private Transform StartPosition;
     [SerializeField] private Transform EndPosition;
-
-    public static Information Instance;
+    public static GameManager Instance;
     
     private void Awake()
     {
@@ -23,17 +22,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        
+    }
     public void EndGame()
     {
         Time.timeScale = 1;
         ClearPanel.SetActive(true);
-        StartCoroutine(Victory());
         //UIPanel.transform.position = Vector2.Lerp(UIPanel.transform.position, new Vector2(960, 540), 10.0f);
         AudioSource audio = Camera.main.GetComponent<AudioSource>();
         audio.Stop();
         audio.PlayOneShot(Resources.Load("Audio/crash") as AudioClip);
         audio.PlayOneShot(Resources.Load("Audio/End Defeat") as AudioClip);
-
+       
 
     }
 
@@ -68,7 +70,7 @@ public class GameManager : MonoBehaviour
 
         PausePanel.SetActive(true);
         Panel.SetActive(false);
-
+        Information.Instance.SetStar();
         AudioSource audio = Camera.main.GetComponent<AudioSource>();
         audio.Stop();
         audio.PlayOneShot(Resources.Load("Audio/End Win") as AudioClip);

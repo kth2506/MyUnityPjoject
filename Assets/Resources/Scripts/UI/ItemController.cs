@@ -9,9 +9,7 @@ public class ItemController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     private Vector3 Offset = new Vector3(50.0f, -50.0f, 0.0f);
     private GameObject tempObj;
     [SerializeField] private GameObject Canvas;
-    private void Start()
-    {
-    }
+   
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = eventData.position;

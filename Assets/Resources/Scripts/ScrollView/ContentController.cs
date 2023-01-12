@@ -17,10 +17,7 @@ public class ContentController : MonoBehaviour
     private void Start()
     {
         AddHorizontalList(0.0f, 120.0f);
-        for(int i= 0; i < 4; ++i)
-        {
-            AddHorizontalList(0.0f, 115.0f);
-        }
+        for(int i= 0; i < 5; ++i)
             AddHorizontalList(0.0f, 115.0f);
     }
 

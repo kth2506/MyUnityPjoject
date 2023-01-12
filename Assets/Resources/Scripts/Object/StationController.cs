@@ -27,7 +27,7 @@ public class StationController : MonoBehaviour
             {
                 Obj.transform.rotation = Quaternion.Euler(270.0f, 90.0f, 0.0f);
                 Obj.transform.position = transform.position + new Vector3(
-             Random.Range(-3.0f, 3.0f) * transform.forward.z,
+                 Random.Range(-3.0f, 3.0f) * transform.forward.z,
                  0.5f,
                  Random.Range(-15.0f, -1.0f) * transform.forward.z);
             }

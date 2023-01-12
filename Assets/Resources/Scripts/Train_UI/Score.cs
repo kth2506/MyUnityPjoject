@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
         ScoreText.text = PlayerScore.ToString() + " / " + MaxScore.ToString();
 
         if (PlayerScore >= 20)
-            FindObjectOfType<GameManager>().StageClear();
+            GameManager.Instance.StageClear();
     }
 
     public void Increase(int _Score)

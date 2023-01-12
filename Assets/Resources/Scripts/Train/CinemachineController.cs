@@ -11,14 +11,13 @@ public class CinemachineController : MonoBehaviour
     [SerializeField] private List<GameObject> StationList;
     [SerializeField] private GameObject Enemy;
     [SerializeField] private GameObject Coin;
-    [SerializeField] private AudioSource TempAudio;
-    [SerializeField] private List<GameObject> BodyList;
-    [SerializeField] private List<GameObject> CubeList;
-    private GameObject BoomObject;
-
-    public GameManager gameManager;
-    private CinemachineDollyCart dolly;
     [SerializeField] private MeshRenderer[] mesh;
+    [SerializeField] private AudioSource TempAudio;
+    [SerializeField] private List<GameObject> CubeList;
+   //private List<GameObject> BodyList;
+    private GameObject BoomObject;
+    [SerializeField] private GameObject[] BodyList;
+    private CinemachineDollyCart dolly;
     private int Index;
     private string Root;
     
@@ -42,7 +41,7 @@ public class CinemachineController : MonoBehaviour
         dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
         dolly.m_Speed = 20.0f;
 
-        gameManager = FindObjectOfType<GameManager>();
+
 
         // 해당 Scene 이 Stage 일 경우에만 Station 관련 함수를 시작함
         if ((SceneManager.GetActiveScene()).name.Contains("Stage"))
@@ -51,7 +50,6 @@ public class CinemachineController : MonoBehaviour
             StationList.Add(GameObject.Find("Station_1"));
             for (int i = 0; i < StationList.Count; ++i)
                 StartCoroutine(Plus(StationList[i], i));
-            StartCoroutine(Dangerous());
         }
     }
 
@@ -72,6 +70,7 @@ public class CinemachineController : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
+        // Stop & mesh 
         if (Physics.Raycast(ray, out hit))
         {
             if (hit.transform == transform)
@@ -120,6 +119,7 @@ public class CinemachineController : MonoBehaviour
     }
 
 
+    //Person Check
      IEnumerator Plus(GameObject _Target, int _Index)
      {
 
@@ -181,6 +181,8 @@ public class CinemachineController : MonoBehaviour
 
     }
 
+
+    // Person 이동
     IEnumerator Move(Transform _transform)
     {
 
@@ -196,34 +198,20 @@ public class CinemachineController : MonoBehaviour
     }
 
 
-    IEnumerator Dangerous()
-    {
-        while(true)
-        {
-            if (Vector3.Distance(Enemy.transform.position, transform.position) < 10.0f)
-            {
-                TempAudio.PlayOneShot(Resources.Load("Audio/tgv") as AudioClip);
-            }
-            yield return new WaitForSeconds(1.0f);
-        }
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == "Enemy" || collision.transform.tag == "Player")
         {
             Debug.Log("Collision!!");
-
-            Rigidbody TrainRid = GetComponent<Rigidbody>();
-            TrainRid.AddExplosionForce(2000, transform.position, 20);
+           
             FindObjectOfType<GameManager>().EndGame();
-           GameObject Obj = Instantiate(Resources.Load("Prefabs/Explosion") as GameObject);
+            GameObject Obj = Instantiate(Resources.Load("Prefabs/Explosion") as GameObject);
             Obj.transform.position = transform.position;
 
         }
     }
 
-
+    //Stop
     IEnumerator SlowlyStop()
     {
         isStop = true;

@@ -56,7 +56,6 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Resources\Scripts\Object\SwitchController.cs" />
     <Compile Include="Assets\Resources\DownloadResources\Spline Walker Train\BezierSpline.cs" />
     <Compile Include="Assets\Resources\Scripts\Object\Information.cs" />
     <Compile Include="Assets\Resources\Scripts\Train_UI\GameManager.cs" />
@@ -73,6 +72,7 @@
     <Compile Include="Assets\Resources\Scripts\Example\CollisionManager.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
     <Compile Include="Assets\Resources\Scripts\Object\VehiclesController.cs" />
+    <Compile Include="Assets\Resources\Scripts\Train_UI\UIManager.cs" />
     <Compile Include="Assets\Resources\DownloadResources\ZombiSoft\TinyHealthSystem\Demo\Demo.cs" />
     <Compile Include="Assets\Resources\DownloadResources\ZombiSoft\TinyHealthSystem\HealthSystem.cs" />
     <Compile Include="Assets\Resources\DownloadResources\Spline Walker Train\BezierControlPointMode.cs" />
@@ -111,6 +111,7 @@
     <Compile Include="Assets\Resources\Scripts\Architecture\CreateManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Architecture\ObjectPoolManager.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
+    <Compile Include="Assets\Resources\Scripts\Fx\Coin.cs" />
     <Compile Include="Assets\Resources\Scripts\Train_UI\Score.cs" />
     <Compile Include="Assets\Resources\DownloadResources\Spline Walker Train\SplineDecorator.cs" />
     <Compile Include="Assets\Resources\Scripts\Train\BodyController.cs" />
@@ -123,7 +124,7 @@
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
     <Compile Include="Assets\Resources\Scripts\Train_UI\SettingsMenu.cs" />
-    <Compile Include="Assets\Resources\Scripts\Train_UI\UIManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\Star.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
@@ -378,6 +379,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.6f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
@@ -834,6 +838,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{51E7F7A1-3A67-FB54-B534-24A7CE2DFC4F}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

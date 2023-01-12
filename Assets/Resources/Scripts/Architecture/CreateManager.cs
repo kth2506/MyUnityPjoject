@@ -54,7 +54,7 @@ public class CreateManager : MonoBehaviour
         }
         tObj._Object.transform.position = transform.position;
         tObj._Object.transform.SetParent(tObj.transform);
-        //tObj._Object.
+        
         ObjectList.Add(tObj);
     }
 

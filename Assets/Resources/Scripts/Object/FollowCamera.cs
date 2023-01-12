@@ -27,7 +27,7 @@ public class FollowCamera : MonoBehaviour
     {
         Target = GameObject.FindWithTag("Player").transform;
 
-        Offset = new Vector3(-60.0f, 50.0f, -70.0f);
+        Offset = new Vector3(-60.0f, 70.0f, -70.0f);
         //transform.Rotate(0.0f, 0.0f, 0.0f);
         StartPos = new Vector3(0.0f, 0.0f, 0.0f);
         EndPos = new Vector3(0.0f, 0.0f, 0.0f);
