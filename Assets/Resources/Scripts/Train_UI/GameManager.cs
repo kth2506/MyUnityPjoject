@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
 
         PausePanel.SetActive(true);
         Panel.SetActive(false);
-        Information.Instance.SetStar();
+        FindObjectOfType<Information>().SetStar();
         AudioSource audio = Camera.main.GetComponent<AudioSource>();
         audio.Stop();
         audio.PlayOneShot(Resources.Load("Audio/End Win") as AudioClip);

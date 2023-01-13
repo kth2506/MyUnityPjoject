@@ -8,7 +8,7 @@ public class Information : MonoBehaviour
     private int pIndex = 1;
     public int StageNum;
     public List<int> StageScore;
-    public Dictionary<string, int> StageStar;
+    public Dictionary<string, int> StageStar = new Dictionary<string, int>();
     [SerializeField] private Timer timer;
 
     // Start is called before the first frame update
@@ -25,6 +25,10 @@ public class Information : MonoBehaviour
     }
     void Start()
     {
+        for(int i = 1; i < 10; ++i)
+        {
+            StageStar.Add("Stage" + i.ToString(), 0);
+        }
     }
     public void PlayerSelect(int _Index)
     {
@@ -43,6 +47,7 @@ public class Information : MonoBehaviour
     {
         timer = GameObject.Find("Time").GetComponent<Timer>();
         StageStar[SceneManager.GetActiveScene().name] = timer.Star;
+        Debug.Log(StageStar[SceneManager.GetActiveScene().name] + "star");
     }
 
     public int GetStar(string Stage)

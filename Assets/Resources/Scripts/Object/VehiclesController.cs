@@ -13,12 +13,12 @@ public class VehiclesController : MonoBehaviour
     private MeshRenderer mesh;
     public int Index;
     public string Root;
-    private int tScore;
+    //private int tScore;
     // Start is called before the first frame update
     private void Awake()
     {
         Index = 0;
-        tScore = 0;
+        //tScore = 0;
         Root = "WayPoint";
         
         GameObject Obj = GameObject.Find(Root);
@@ -95,8 +95,8 @@ public class VehiclesController : MonoBehaviour
         {
             agent.autoBraking = true;
             Score score = GameObject.Find("Score").GetComponent<Score>();
-            score.Increase(tScore);
-            tScore = 0;
+            //score.Increase(tScore);
+            //tScore = 0;
         }
         else
             agent.autoBraking = false;

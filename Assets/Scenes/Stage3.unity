@@ -2678,7 +2678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877218694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35, y: -0.55, z: 25}
+  m_LocalPosition: {x: 25, y: -0.55, z: 25}
   m_LocalScale: {x: 250, y: 1, z: 250}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6401,7 +6401,6 @@ MonoBehaviour:
   Interface: []
   StartPosition: {fileID: 2025560928}
   EndPosition: {fileID: 2025560927}
-  timer: {fileID: 0}
 --- !u!4 &1858869568
 Transform:
   m_ObjectHideFlags: 0
@@ -7519,6 +7518,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5493695597670989071, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
+      propertyPath: MaxScore
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5493695598058953985, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -7634,6 +7637,34 @@ PrefabInstance:
     - target: {fileID: 5493695598860908526, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493695598875114030, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
+      propertyPath: duration
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493695598910829758, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1477627085}
+    - target: {fileID: 5493695598910829758, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1858869567}
+    - target: {fileID: 5493695598910829758, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493695598910829758, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: GamePause
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493695598910829758, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493695598910829758, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5493695599553742566, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

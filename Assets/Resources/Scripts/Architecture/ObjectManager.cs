@@ -48,7 +48,7 @@ public class ObjectManager : MonoBehaviour
                 {
                     if (i != _Index && ScoreList[i] > 0)
                     {
-                        score.Increase(ScoreList[i]);
+                        //score.Increase(ScoreList[i]);
                         ScoreList[i] = 0;
                         TempAudio.PlayOneShot(Resources.Load("Audio/Coin") as AudioClip);
 
