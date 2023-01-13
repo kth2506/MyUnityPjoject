@@ -22,14 +22,14 @@ public class BodyController : MonoBehaviour
             target.Add(Obj.transform.GetChild(i));
         dolly = transform.GetComponent<CinemachineDollyCart>();
         dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
-        dolly.m_Speed = 0.0f;
+        dolly.m_Speed = 20.0f;
     }
 
     void Update()
     {
-        dolly.m_Position = Train.GetComponent<CinemachineDollyCart>().m_Position - float.Parse(transform.name) * 4;
-        dolly.m_Path = Train.GetComponent<CinemachineDollyCart>().m_Path;
-        //if (dolly.m_Position >= dolly.m_Path.PathLength)
+        //dolly.m_Position = Train.GetComponent<CinemachineDollyCart>().m_Position - float.Parse(transform.name) * 4;
+        //dolly.m_Path = Train.GetComponent<CinemachineDollyCart>().m_Path;
+        ////if (dolly.m_Position >= dolly.m_Path.PathLength)
         //{
         //    Index++;
         //    dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
@@ -37,10 +37,8 @@ public class BodyController : MonoBehaviour
         //    dolly.m_Position = 0.0f;
         //}
 
-        transform.rotation = new Quaternion(270.0f, Train.transform.localEulerAngles.y, transform.rotation.z, transform.rotation.w);
+        transform.localEulerAngles = new Vector3(270.0f, transform.localEulerAngles.y, transform.localEulerAngles.z);
 
-        Debug.Log(Train.transform.localEulerAngles);
-        Debug.Log(Train.transform.forward);
         Debug.Log(transform.localEulerAngles);
 
     }
