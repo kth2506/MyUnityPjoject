@@ -10,6 +10,7 @@ public class BodyController : MonoBehaviour
     [SerializeField] private List<Transform> target;
     [SerializeField] private GameObject Train;
     private CinemachineDollyCart dolly;
+    private float offset;
     private int Index;
     private string Root;
     private void Awake()
@@ -22,24 +23,40 @@ public class BodyController : MonoBehaviour
             target.Add(Obj.transform.GetChild(i));
         dolly = transform.GetComponent<CinemachineDollyCart>();
         dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
-        dolly.m_Speed = 20.0f;
+        dolly.m_Speed =0.0f;
+
+        switch(transform.name)
+        {
+            case "1":
+                offset = 0.0f;
+                break;
+            case "2":
+                offset = 4.4f;
+                break;
+            case "3":
+                offset = 7.6f;
+                break;
+            case "4":
+                offset = 10.8f;
+                break;
+            case "5":
+                offset = 15.2f;
+                break;
+        }
     }
 
-    void Update()
+    void LateUpdate()
     {
-        //dolly.m_Position = Train.GetComponent<CinemachineDollyCart>().m_Position - float.Parse(transform.name) * 4;
-        //dolly.m_Path = Train.GetComponent<CinemachineDollyCart>().m_Path;
-        ////if (dolly.m_Position >= dolly.m_Path.PathLength)
-        //{
-        //    Index++;
-        //    dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
+        
+        dolly.m_Position = Train.GetComponent<CinemachineDollyCart>().m_Position - offset;
+        dolly.m_Path = Train.GetComponent<CinemachineDollyCart>().m_Path;
+        if (dolly.m_Position >= dolly.m_Path.PathLength && target.Count > Index + 1)
+        {
+            Index++;
+            dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
 
-        //    dolly.m_Position = 0.0f;
-        //}
-
-        transform.localEulerAngles = new Vector3(270.0f, transform.localEulerAngles.y, transform.localEulerAngles.z);
-
-        Debug.Log(transform.localEulerAngles);
+            dolly.m_Position = 0.0f;
+        }
 
     }
 }

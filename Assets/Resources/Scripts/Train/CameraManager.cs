@@ -16,14 +16,14 @@ public class CameraManager : MonoBehaviour
 
             if (Camera.main.orthographicSize > 25.0f)
             {
-                Camera.main.orthographicSize -= 1.0f;
+                Camera.main.orthographicSize -= 2.0f;
             }
         }
         else if (wheelInput < 0)
         {
             if (Camera.main.orthographicSize < 70.0f)
             {
-                Camera.main.orthographicSize += 1.0f;
+                Camera.main.orthographicSize += 2.0f;
             }
         }
 

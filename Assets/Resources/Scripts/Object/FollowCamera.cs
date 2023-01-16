@@ -46,11 +46,8 @@ public class FollowCamera : MonoBehaviour
         // **부드러운 이동
         if (Target)
         {
-            GameObject Obj = GameObject.Find("Field");
-
             //if (main.orthographicSize < Obj.transform.localScale.x + 2.0f)
             //    main.orthographicSize += 1.3f;
-
             transform.position = Vector3.Lerp(
                 transform.position ,
                 Target.position + Offset,

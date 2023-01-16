@@ -30,7 +30,7 @@ public class PlayerChoice : MonoBehaviour
         Destroy(transform.GetChild(0).gameObject);
         Player = Resources.Load("Prefabs/Vehicles/Vehicles" + Index.ToString()) as GameObject;
         GameObject Obj = Instantiate(Player);
-        Obj.transform.localRotation = new Quaternion(0.0f, 0.0f, 0.0f, 0);
+        //Obj.transform.localRotation = new Quaternion(0.0f, 0.0f, 0.0f, 0);
         Obj.transform.position = transform.position;
         Obj.transform.parent = transform;
         transform.position = new Vector3(15.0f, 0.0f, 50.0f);
@@ -38,12 +38,12 @@ public class PlayerChoice : MonoBehaviour
 
     public void Left()
     {
-        Index++;
+        Index--;
         PlayerChange();
     }
     public void Right()
     {
-        Index--;
+        Index++;
         PlayerChange();
     }
 }

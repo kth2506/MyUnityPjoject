@@ -40,6 +40,7 @@ public class CinemachineController : MonoBehaviour
         dolly = transform.GetComponent<CinemachineDollyCart>();
         dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
         dolly.m_Speed = 20.0f;
+        dolly.m_Position = 20.0f;
 
 
 
@@ -76,7 +77,7 @@ public class CinemachineController : MonoBehaviour
             if (hit.transform == transform)
             {
 
-                for(int i = 0; i < 5; ++i)
+                for(int i = 1; i < mesh.Length; ++i)
                 {
                     mesh[i].material.shader = Shader.Find("Transparent/VertexLit");
 
@@ -106,7 +107,7 @@ public class CinemachineController : MonoBehaviour
             }
             else
             {
-                for (int i = 0; i < 5; ++i)
+                for (int i = 1; i < mesh.Length; ++i)
                 {
                     string temp = "Materials/" + mesh[i].material.name.Replace(" (Instance)", "");
                     mesh[i].material = Resources.Load(temp) as Material;
@@ -136,8 +137,7 @@ public class CinemachineController : MonoBehaviour
                         score.SetScore(ScoreList[i]);
                         ScoreList[i] = 0;
                         TempAudio.PlayOneShot(Resources.Load("Audio/Coin") as AudioClip);
-                        GameObject coin = Resources.Load("Prefabs/Coin") as GameObject;
-                        coin.transform.position = transform.position;
+                        
                         for (int j = 0; j < CubeList.Count; ++j)
                         {
                             CubeList[j].SetActive(false);
@@ -156,10 +156,12 @@ public class CinemachineController : MonoBehaviour
                     {
                         for (int i = 1; i < childList.Length; ++i)
                         {
-                            if (childList[i] != transform && ScoreList[_Index] < 9)
+                            if (childList[i] != transform && ScoreList[_Index] < CubeList.Count)
                             {
                                 
                                 ScoreList[_Index]++;
+                                GameObject coin = Resources.Load("Prefabs/Coin") as GameObject;
+                                coin.transform.position = transform.position;
                                 TempAudio.PlayOneShot(Resources.Load("Audio/Swipe2") as AudioClip);
                                 CubeList[ScoreList[_Index] - 1].SetActive(true);
                                 GameObject coinEffect = Instantiate(Coin);
