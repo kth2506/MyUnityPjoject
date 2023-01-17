@@ -416,11 +416,14 @@
 "Assets/Resources/Scripts/Train_UI/UI_Menu.cs"
 "Assets/Resources/Scripts/UI/ItemController.cs"
 "Assets/Resources/Scripts/UI/MyGizmo.cs"
+"Assets/Resources/Scripts/UI/PlayerStop.cs"
 "Assets/Resources/Scripts/UI/SkillInventoryController.cs"
 "Assets/Resources/Scripts/UI/SkillSlotController.cs"
 "Assets/Resources/Scripts/UI/SlideController.cs"
 "Assets/Resources/Scripts/UI/Star.cs"
 "Assets/Resources/Scripts/UI/ToggleController.cs"
+"Assets/Resources/Scripts/View/FieldOfView.cs"
+"Assets/Resources/Scripts/View/JoyStickController.cs"
 -langversion:9.0
 
 /deterministic

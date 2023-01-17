@@ -8,7 +8,7 @@ public class FrustumLine : MonoBehaviour
     private Vector3[] CameraFrustum = new Vector3[4];
     [SerializeField] private List<MeshRenderer> RendererList = new List<MeshRenderer>();
     [SerializeField] private List<GameObject> CullingList = new List<GameObject>();
-    private List<MeshRenderer> TempList = new List<MeshRenderer>();
+    private List<MeshRenderer> TempRendererList = new List<MeshRenderer>();
 
     [SerializeField] private LayerMask mask;
     [SerializeField] private float Distance;
@@ -20,7 +20,7 @@ public class FrustumLine : MonoBehaviour
     {
         x = y = 0.45f;
         cx = cy = 0.1f;
-        Distance = 20.0f;
+        Distance = 120.0f;
         mainCamera = transform.GetComponent<Camera>();
 
         for(int i = 0; i < CameraFrustum.Length; ++i)
@@ -51,25 +51,30 @@ public class FrustumLine : MonoBehaviour
             foreach (RaycastHit hit in hits)
                 if(!CullingList.Contains(hit.transform.gameObject))
                     CullingList.Add(hit.transform.gameObject);
-
         }
 
+        
         RendererList.Clear();
 
         foreach (GameObject Element in CullingList)
             StartCoroutine(FindRenderer(Element));
 
         if(RendererList.Count > 0)
-            TempList = RendererList.ToList();
-        else if(TempList.Count > 0)
+            TempRendererList = RendererList.ToList();
+        else if(TempRendererList.Count > 0)
         {
-            foreach (MeshRenderer Element in TempList)
+            foreach (MeshRenderer Element in TempRendererList)
             {
-                 string temp = "Materials/" + Element.material.name.Replace(" (Instance)", "");
-                 Element.material = Resources.Load(temp) as Material;
+                if(!CullingList.Contains(Element.gameObject))
+                {
+                    string temp = "Materials/" + Element.material.name.Replace(" (Instance)", "");
+                    Element.material = Resources.Load(temp) as Material;
+                }
             }
-            TempList.Clear();
+            TempRendererList.Clear();
         }
+
+        
 
         foreach (MeshRenderer Element in RendererList)
         {
@@ -79,7 +84,8 @@ public class FrustumLine : MonoBehaviour
             {
                 Color color = Element.material.GetColor("_Color");
 
-                StartCoroutine(SetColor(Element, color));
+                Element.material.SetColor("_Color", new Color(color.r, color.g, color.b, 0.3f));
+                //StartCoroutine(SetColor(Element, color));
             }
         }
     }

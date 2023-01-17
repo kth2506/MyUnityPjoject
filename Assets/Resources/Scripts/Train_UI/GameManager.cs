@@ -11,8 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<GameObject> Interface;
     [SerializeField] private Transform StartPosition;
     [SerializeField] private Transform EndPosition;
+    private GameObject Player;
     public static GameManager Instance;
-    
+
     private void Awake()
     {
         if (Instance != null)
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        
+        Player = FindObjectOfType<CinemachineController>().gameObject;
     }
     public void EndGame()
     {
@@ -35,7 +36,7 @@ public class GameManager : MonoBehaviour
         audio.Stop();
         audio.PlayOneShot(Resources.Load("Audio/crash") as AudioClip);
         audio.PlayOneShot(Resources.Load("Audio/End Defeat") as AudioClip);
-       
+
 
     }
 
@@ -62,7 +63,7 @@ public class GameManager : MonoBehaviour
             PausePanel.SetActive(true);
             Time.timeScale = 0;
         }
-       
+
     }
 
     public void StageClear()
@@ -80,7 +81,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator Victory()
     {
         float fTime = 0;
-        
+
         while (fTime <= 2.0f)
         {
             fTime += Time.deltaTime;
@@ -91,9 +92,15 @@ public class GameManager : MonoBehaviour
         PausePanel.SetActive(true);
         Panel.SetActive(false);
     }
+
     public void NextStage()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void PlayerStop()
+    {
+        StartCoroutine(Player.GetComponent<CinemachineController>().SlowlyStop());
     }
 }

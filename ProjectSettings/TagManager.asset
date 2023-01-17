@@ -13,6 +13,7 @@ TagManager:
   - HealthSprite
   - Station
   - Slot
+  - Tunnel
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Building
   - Track
   - Station
-  - 
+  - Tunnel
   - 
   - 
   - 

@@ -7130,7 +7130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7126697086158310784}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 1.5250001, z: 4.3399997}
+  m_LocalPosition: {x: -0, y: 2.11, z: 4.3399997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9576,6 +9576,8 @@ MonoBehaviour:
   target: []
   StationList: []
   Enemy: {fileID: 0}
+  Coin: {fileID: 0}
+  mesh: []
   TempAudio: {fileID: 0}
   CubeList:
   - {fileID: 140053195240851112}
@@ -9586,9 +9588,7 @@ MonoBehaviour:
   - {fileID: 7240356544058239635}
   - {fileID: 4267177605301453597}
   - {fileID: 4954951011345015929}
-  gameManager: {fileID: 0}
-  StopAnim: {fileID: 0}
-  mesh: []
+  BodyList: []
 --- !u!54 &8456944210779215739
 Rigidbody:
   m_ObjectHideFlags: 0

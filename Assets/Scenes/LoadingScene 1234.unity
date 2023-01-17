@@ -1784,6 +1784,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7616793035492697196, guid: afeaa09bead98224aa1c1b6b23cb0055, type: 3}
   m_PrefabInstance: {fileID: 95817869}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &99883626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1062900293851084930, guid: 82f6db4d10c50404d85eaeff14347570, type: 3}
+  m_PrefabInstance: {fileID: 1062900295608843819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &104902082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4229,7 +4234,6 @@ GameObject:
   - component: {fileID: 224780978}
   - component: {fileID: 224780977}
   - component: {fileID: 224780976}
-  - component: {fileID: 224780979}
   - component: {fileID: 224780980}
   m_Layer: 0
   m_Name: Main Camera
@@ -4304,20 +4308,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 85, y: 0, z: 0}
---- !u!114 &224780979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224780975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85db5ee176e290349b7152f9c6690dfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 2043332278}
-  Offset: {x: 0, y: 0, z: 0}
 --- !u!114 &224780980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4334,7 +4324,7 @@ MonoBehaviour:
   CullingList: []
   mask:
     serializedVersion: 2
-    m_Bits: 2240
+    m_Bits: 2048
   Distance: 0
   testShader: {fileID: 0}
   x: 0
@@ -5339,14 +5329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1567e3b9e7b524da7011f24bdb7e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0
-  Rotate: 0
-  FirePointObject: {fileID: 0}
-  SmokePrefab: {fileID: 0}
-  Bullet: {fileID: 0}
-  TargetMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!54 &273364712
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29842,7 +29824,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2885139236031929251}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09274aa0e079b364ebfce3b801b16cbe, type: 3}
   m_Name: 
@@ -38302,11 +38284,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7616793035492697196, guid: afeaa09bead98224aa1c1b6b23cb0055, type: 3}
   m_PrefabInstance: {fileID: 493470325}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2043332278 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1062900293851084957, guid: 82f6db4d10c50404d85eaeff14347570, type: 3}
-  m_PrefabInstance: {fileID: 1062900295608843819}
+--- !u!114 &2043332286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99883626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 565d02c98b5266742a6e308ba1135420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoint: {fileID: 0}
+  offSet: {x: 0, y: 0, z: 0}
+  mainCamera: {fileID: 0}
+  Enemys: []
+  hitPoints: []
 --- !u!1001 &2048005403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40577,7 +40571,9 @@ PrefabInstance:
       propertyPath: ObstacleMask.m_Bits
       value: 128
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1062900293851084945, guid: 82f6db4d10c50404d85eaeff14347570, type: 3}
+    - {fileID: 3760478666557863513, guid: 82f6db4d10c50404d85eaeff14347570, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 82f6db4d10c50404d85eaeff14347570, type: 3}
 --- !u!54 &2506077284577938576
 Rigidbody:

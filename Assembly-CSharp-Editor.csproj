@@ -56,14 +56,12 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Resources\Arrange\View\Editor\JoyStickController.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
     <Compile Include="Assets\Resources\DownloadResources\Spline Walker Train\Editor\BezierSplineInspector.cs" />
     <Compile Include="Assets\Resources\DownloadResources\Spline Walker Train\Editor\LineInspector.cs" />
-    <Compile Include="Assets\Resources\Arrange\View\Editor\FieldOfView.cs" />
-    <Compile Include="Assets\Resources\Arrange\View\Editor\WayPoint.cs" />
+    <Compile Include="Assets\Resources\Scripts\View\Editor\WayPoint.cs" />
     <Compile Include="Assets\Resources\DownloadResources\Spline Walker Train\Editor\BezierCurveInspector.cs" />
-    <Compile Include="Assets\Resources\Arrange\View\Editor\ViewEditor.cs" />
+    <Compile Include="Assets\Resources\Scripts\View\Editor\ViewEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\DownloadResources\JMO Assets\Editor\JMOAssets_CartoonFXFreeWelcome.dll" />

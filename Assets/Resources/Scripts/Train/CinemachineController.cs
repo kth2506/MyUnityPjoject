@@ -87,23 +87,10 @@ public class CinemachineController : MonoBehaviour
                         mesh[i].material.SetColor("_Color", new Color(color.r, color.g, color.b, 0.5f));
                     }
                 }
-                if (Input.GetMouseButtonDown(0))
-                {
-                    isStop = !isStop;
-                    if (isStop == true)
-                    {
-                        StartCoroutine(SlowlyStop());
-                        GameObject Obj = Instantiate(BoomObject);
-                        Obj.transform.localScale *= 1.3f;
-                        Obj.transform.position = transform.position;
-                        GameObject Obj2 = Instantiate(BoomObject);
-                        Obj2.transform.position = transform.position + new Vector3(2.0f, 0.0f, 0.0f);
-                        Obj2.transform.localScale *= 1.3f;
-
-                    }
-                    else
-                        dolly.m_Speed = 20.0f;
-                }
+                //if (Input.GetMouseButtonDown(0))
+                //{
+                //        StartCoroutine(SlowlyStop());
+                //}
             }
             else
             {
@@ -114,9 +101,6 @@ public class CinemachineController : MonoBehaviour
                 }
             }
         }
-
-    
-
     }
 
 
@@ -158,7 +142,6 @@ public class CinemachineController : MonoBehaviour
                         {
                             if (childList[i] != transform && ScoreList[_Index] < CubeList.Count)
                             {
-                                
                                 ScoreList[_Index]++;
                                 GameObject coin = Resources.Load("Prefabs/Coin") as GameObject;
                                 coin.transform.position = transform.position;
@@ -187,7 +170,6 @@ public class CinemachineController : MonoBehaviour
     // Person ÀÌµ¿
     IEnumerator Move(Transform _transform)
     {
-
         while (true)
         {
             _transform.position = Vector3.MoveTowards(_transform.position, transform.position, 3);
@@ -196,7 +178,6 @@ public class CinemachineController : MonoBehaviour
             yield return null;
         }
         Destroy(_transform.gameObject, 0.2f);
-
     }
 
 
@@ -209,23 +190,35 @@ public class CinemachineController : MonoBehaviour
             FindObjectOfType<GameManager>().EndGame();
             GameObject Obj = Instantiate(Resources.Load("Prefabs/Explosion") as GameObject);
             Obj.transform.position = transform.position;
-
         }
     }
 
     //Stop
-    IEnumerator SlowlyStop()
+    public IEnumerator SlowlyStop()
     {
-        isStop = true;
-        while (dolly.m_Speed > 0.0f)
+        isStop = !isStop;
+        if (isStop == true)
         {
-            dolly.m_Speed -= Time.deltaTime * 50;
-            transform.Rotate(0.0f, 0.0f, 15);
+            GameObject Obj = Instantiate(BoomObject);
+            Obj.transform.localScale *= 1.3f;
+            Obj.transform.position = transform.position;
+            GameObject Obj2 = Instantiate(BoomObject);
+            Obj2.transform.position = transform.position + new Vector3(2.0f, 0.0f, 0.0f);
+            Obj2.transform.localScale *= 1.3f;
+            isStop = true;
+            while (dolly.m_Speed > 0.0f)
+            {
+                dolly.m_Speed -= Time.deltaTime * 50;
+                transform.Rotate(0.0f, 0.0f, 15);
 
-            yield return null;
+                yield return null;
+            }
+            dolly.m_Speed = 0.0f;
+            
         }
-        dolly.m_Speed = 0.0f;
-
+        else
+            dolly.m_Speed = 20.0f;
+       
     }
 
 }

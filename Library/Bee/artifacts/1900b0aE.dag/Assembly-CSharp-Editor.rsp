@@ -372,14 +372,12 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Resources/Arrange/View/Editor/FieldOfView.cs"
-"Assets/Resources/Arrange/View/Editor/JoyStickController.cs"
-"Assets/Resources/Arrange/View/Editor/ViewEditor.cs"
-"Assets/Resources/Arrange/View/Editor/WayPoint.cs"
 "Assets/Resources/DownloadResources/JMO Assets/Cartoon FX Easy Editor/Editor/CFXEasyEditor.cs"
 "Assets/Resources/DownloadResources/Spline Walker Train/Editor/BezierCurveInspector.cs"
 "Assets/Resources/DownloadResources/Spline Walker Train/Editor/BezierSplineInspector.cs"
 "Assets/Resources/DownloadResources/Spline Walker Train/Editor/LineInspector.cs"
+"Assets/Resources/Scripts/View/Editor/ViewEditor.cs"
+"Assets/Resources/Scripts/View/Editor/WayPoint.cs"
 -langversion:9.0
 
 /deterministic

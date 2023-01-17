@@ -25,29 +25,28 @@ public class BodyController : MonoBehaviour
         dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
         dolly.m_Speed =0.0f;
 
-        switch(transform.name)
+        switch (transform.name)
         {
             case "1":
                 offset = 0.0f;
                 break;
             case "2":
-                offset = 4.4f;
+                offset = 4.2f;
                 break;
             case "3":
-                offset = 7.6f;
+                offset = 7.3f;
                 break;
             case "4":
-                offset = 10.8f;
+                offset = 10.5f;
                 break;
             case "5":
-                offset = 15.2f;
+                offset = 15.0f;
                 break;
         }
     }
 
     void LateUpdate()
     {
-        
         dolly.m_Position = Train.GetComponent<CinemachineDollyCart>().m_Position - offset;
         dolly.m_Path = Train.GetComponent<CinemachineDollyCart>().m_Path;
         if (dolly.m_Position >= dolly.m_Path.PathLength && target.Count > Index + 1)

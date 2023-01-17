@@ -59,6 +59,7 @@
     <Compile Include="Assets\Resources\DownloadResources\Spline Walker Train\BezierSpline.cs" />
     <Compile Include="Assets\Resources\Scripts\Object\Information.cs" />
     <Compile Include="Assets\Resources\Scripts\Train_UI\GameManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\View\JoyStickController.cs" />
     <Compile Include="Assets\Resources\Scripts\Train_UI\UI_Menu.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\Resources\Scripts\Object\PlayerChoice.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Assets\Resources\Scripts\Example\FrustumLine.cs" />
     <Compile Include="Assets\Resources\Scripts\Object\FollowCamera.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
+    <Compile Include="Assets\Resources\Scripts\View\FieldOfView.cs" />
     <Compile Include="Assets\Resources\Scripts\Object\PlayerInit.cs" />
     <Compile Include="Assets\Resources\DownloadResources\Spline Walker Train\SwtWagon.cs" />
     <Compile Include="Assets\Resources\Scripts\Example\Point.cs" />
@@ -125,6 +127,7 @@
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
     <Compile Include="Assets\Resources\Scripts\Train_UI\SettingsMenu.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\PlayerStop.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
