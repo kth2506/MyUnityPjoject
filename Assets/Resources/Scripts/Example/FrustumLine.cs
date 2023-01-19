@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 public class FrustumLine : MonoBehaviour
 {
     private Camera mainCamera;
     private Vector3[] CameraFrustum = new Vector3[4];
     [SerializeField] private List<MeshRenderer> RendererList = new List<MeshRenderer>();
     [SerializeField] private List<GameObject> CullingList = new List<GameObject>();
-    private List<MeshRenderer> TempRendererList = new List<MeshRenderer>();
+    [SerializeField] private List<MeshRenderer> TempRendererList = new List<MeshRenderer>();
 
     [SerializeField] private LayerMask mask;
     [SerializeField] private float Distance;
@@ -19,7 +20,7 @@ public class FrustumLine : MonoBehaviour
     private void Awake()
     {
         x = y = 0.45f;
-        cx = cy = 0.1f;
+        cx = cy = 0.45f;
         Distance = 120.0f;
         mainCamera = transform.GetComponent<Camera>();
 
@@ -59,35 +60,38 @@ public class FrustumLine : MonoBehaviour
         foreach (GameObject Element in CullingList)
             StartCoroutine(FindRenderer(Element));
 
-        if(RendererList.Count > 0)
-            TempRendererList = RendererList.ToList();
-        else if(TempRendererList.Count > 0)
-        {
-            foreach (MeshRenderer Element in TempRendererList)
-            {
-                if(!CullingList.Contains(Element.gameObject))
-                {
-                    string temp = "Materials/" + Element.material.name.Replace(" (Instance)", "");
-                    Element.material = Resources.Load(temp) as Material;
-                }
-            }
-            TempRendererList.Clear();
-        }
-
-        
-
+        //bool isEqual = Enumerable.SequenceEqual(RendererList.OrderBy(e => e), TempRendererList.OrderBy(e => e));
+     
         foreach (MeshRenderer Element in RendererList)
         {
-            Element.material.shader = Shader.Find("Transparent/VertexLit");
-
-            if (Element.material.HasProperty("_Color"))
+            if (!TempRendererList.Contains(Element))
             {
-                Color color = Element.material.GetColor("_Color");
+                Element.material.shader = Shader.Find("Transparent/VertexLit");
 
-                Element.material.SetColor("_Color", new Color(color.r, color.g, color.b, 0.3f));
-                //StartCoroutine(SetColor(Element, color));
+                if (Element.material.HasProperty("_Color"))
+                {
+                    Color color = Element.material.GetColor("_Color");
+
+                    Element.material.SetColor("_Color", new Color(color.r, color.g, color.b, 0.3f));
+                }
+                TempRendererList.Add(Element);
             }
         }
+
+        List<MeshRenderer> toRemove = new List<MeshRenderer>();
+        for (IEnumerator<MeshRenderer> mesh = TempRendererList.GetEnumerator(); mesh.MoveNext(); )
+        {
+            if (!RendererList.Contains(mesh.Current))
+            {
+                string temp = "Materials/" + mesh.Current.material.name.Replace(" (Instance)", "");
+                mesh.Current.material = Resources.Load(temp) as Material;
+                toRemove.Add(mesh.Current);
+            }
+        }
+        TempRendererList.RemoveAll(toRemove.Contains);
+
+
+       
     }
 
     IEnumerator FindRenderer(GameObject _Obj)
