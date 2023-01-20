@@ -205,7 +205,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2616788307928279956}
   - component: {fileID: 3252472186235537989}
-  - component: {fileID: 2296169811011144967}
   m_Layer: 0
   m_Name: Station_1
   m_TagString: Untagged
@@ -235,27 +234,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3394416379917873454}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2907b13785216e49ab73bfb17fab7e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Person: {fileID: 0}
   PersonList: []
---- !u!114 &2296169811011144967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3394416379917873454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c4a4f7422704ce45885a7d9e6818254, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectList: []
-  Obj: {fileID: 0}
 --- !u!1 &4443522890440233221
 GameObject:
   m_ObjectHideFlags: 0

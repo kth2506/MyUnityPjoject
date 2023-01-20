@@ -25,8 +25,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Player = FindObjectOfType<CinemachineController>().gameObject;
+       
     }
+
+
+
     public void EndGame()
     {
         Time.timeScale = 1;
@@ -101,6 +104,16 @@ public class GameManager : MonoBehaviour
 
     public void PlayerStop()
     {
+        Player = FindObjectOfType<CinemachineController>().gameObject;
         StartCoroutine(Player.GetComponent<CinemachineController>().SlowlyStop());
+    }
+
+    public void SceneOption()
+    {
+        SceneManager.LoadScene("Option");
+    }
+    public void SceneMain()
+    {
+        SceneManager.LoadScene("LoadingScene1");
     }
 }

@@ -9,14 +9,13 @@ public class CinemachineController : MonoBehaviour
 {
     [SerializeField] private List<Transform> target;
     [SerializeField] private List<GameObject> StationList;
-    [SerializeField] private GameObject Enemy;
     [SerializeField] private GameObject Coin;
     [SerializeField] private MeshRenderer[] mesh;
     [SerializeField] private AudioSource TempAudio;
     [SerializeField] private List<GameObject> CubeList;
-   //private List<GameObject> BodyList;
+    
+    [SerializeField] private List<GameObject> BodyList;
     private GameObject BoomObject;
-    [SerializeField] private GameObject[] BodyList;
     private CinemachineDollyCart dolly;
     private int Index;
     private string Root;
@@ -26,16 +25,25 @@ public class CinemachineController : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        // 해당 Scene 이 Stage 일 경우에만 Station 관련 함수를 시작함
+        if(!SceneManager.GetActiveScene().name.Contains("Stage"))
+        {
+            GetComponent<CinemachineController>().enabled = false;
+        }
+        
         Index = 0;
         Root = "WayPoint";
         isStop = false;
+
+        foreach (GameObject body in BodyList)
+            body.AddComponent<BodyController>();
+
 
         GameObject Obj = GameObject.Find(Root);
         mesh = transform.GetComponentsInChildren<MeshRenderer>();
         for (int i = 0; i < Obj.transform.childCount; ++i)
             target.Add(Obj.transform.GetChild(i));
         BoomObject = Resources.Load("Prefabs/PlayerBoom") as GameObject;
-        Enemy = GameObject.Find("Enemy");
         TempAudio = GameObject.Find("EffectSound").GetComponent<AudioSource>();
         dolly = transform.GetComponent<CinemachineDollyCart>();
         dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
@@ -43,15 +51,11 @@ public class CinemachineController : MonoBehaviour
         dolly.m_Position = 20.0f;
 
 
-
-        // 해당 Scene 이 Stage 일 경우에만 Station 관련 함수를 시작함
-        if ((SceneManager.GetActiveScene()).name.Contains("Stage"))
-        {
-            StationList.Add(GameObject.Find("Station_0"));
-            StationList.Add(GameObject.Find("Station_1"));
-            for (int i = 0; i < StationList.Count; ++i)
-                StartCoroutine(Plus(StationList[i], i));
-        }
+        StationList.Add(GameObject.Find("Station_0"));
+        StationList.Add(GameObject.Find("Station_1"));
+        for (int i = 0; i < StationList.Count; ++i)
+            StartCoroutine(Plus(StationList[i], i));
+        
     }
 
 
@@ -87,10 +91,10 @@ public class CinemachineController : MonoBehaviour
                         mesh[i].material.SetColor("_Color", new Color(color.r, color.g, color.b, 0.5f));
                     }
                 }
-                //if (Input.GetMouseButtonDown(0))
-                //{
-                //        StartCoroutine(SlowlyStop());
-                //}
+               if (Input.GetMouseButtonDown(0))
+               {
+                       StartCoroutine(SlowlyStop());
+               }
             }
             else
             {

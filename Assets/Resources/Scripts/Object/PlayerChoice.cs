@@ -8,17 +8,8 @@ public class PlayerChoice : MonoBehaviour
     
     [SerializeField] private GameObject Player;
     [SerializeField] private Information info;
-    public int Index;
+    public int Index = 1;
     // Start is called before the first frame update
-    private void Awake()
-    {
-        Index = 1;
-        Player = Resources.Load("Prefabs/Vehicles/Vehicles1") as GameObject;
-        GameObject Obj = Instantiate(Player);
-        Obj.transform.position = transform.position;
-        Obj.transform.parent = transform;
-        info = GameObject.Find("Information").GetComponent<Information>();
-    }
 
     public void PlayerChange()
     {
@@ -33,7 +24,8 @@ public class PlayerChoice : MonoBehaviour
         //Obj.transform.localRotation = new Quaternion(0.0f, 0.0f, 0.0f, 0);
         Obj.transform.position = transform.position;
         Obj.transform.parent = transform;
-        transform.position = new Vector3(15.0f, 0.0f, 50.0f);
+        Obj.name = "Player";
+
     }
 
     public void Left()

@@ -13,6 +13,9 @@ public class BodyController : MonoBehaviour
     private float offset;
     private int Index;
     private string Root;
+
+
+
     private void Awake()
     {
         Index = 0;

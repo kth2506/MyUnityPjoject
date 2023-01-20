@@ -25,7 +25,7 @@ public class FollowCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Target = GameObject.FindWithTag("Player").transform;
+        
 
         Offset = new Vector3(-60.0f, 70.0f, -70.0f);
         //transform.Rotate(0.0f, 0.0f, 0.0f);
@@ -35,12 +35,13 @@ public class FollowCamera : MonoBehaviour
         CameraQuaternion = new Quaternion();
         CameraAngles = new Vector3(90.0f, 0.0f, 0.0f);
         CameraQuaternion = Quaternion.Euler(CameraAngles);
-       
+        Target = GameObject.FindWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         //Offset = new Vector3(Target.transform.position.x, 20.0f, Target.transform.position.z - 1.5f);
         //transform.position = Offset;
         // **부드러운 이동

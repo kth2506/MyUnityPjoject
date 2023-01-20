@@ -21,8 +21,8 @@ public class Information : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
     }
+
     void Start()
     {
         for(int i = 1; i < 10; ++i)
