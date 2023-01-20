@@ -18,34 +18,39 @@ public class BodyController : MonoBehaviour
 
     private void Awake()
     {
-        Index = 0;
-        Root = "WayPoint";
-
-        GameObject Obj = GameObject.Find(Root);
-        for (int i = 0; i < Obj.transform.childCount; ++i)
-            target.Add(Obj.transform.GetChild(i));
-        dolly = transform.GetComponent<CinemachineDollyCart>();
-        dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
-        dolly.m_Speed =0.0f;
-
-        switch (transform.name)
+        if (SceneManager.GetActiveScene().name.Contains("Stage"))
         {
-            case "1":
-                offset = 0.0f;
-                break;
-            case "2":
-                offset = 4.2f;
-                break;
-            case "3":
-                offset = 7.3f;
-                break;
-            case "4":
-                offset = 10.5f;
-                break;
-            case "5":
-                offset = 15.0f;
-                break;
+            Index = 0;
+            Root = "WayPoint";
+            GameObject Obj = GameObject.Find(Root);
+            for (int i = 0; i < Obj.transform.childCount; ++i)
+                target.Add(Obj.transform.GetChild(i));
+            dolly = transform.GetComponent<CinemachineDollyCart>();
+            dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
+            dolly.m_Speed = 0.0f;
+
+            switch (transform.name)
+            {
+                case "1":
+                    offset = 0.0f;
+                    break;
+                case "2":
+                    offset = 4.2f;
+                    break;
+                case "3":
+                    offset = 7.3f;
+                    break;
+                case "4":
+                    offset = 10.5f;
+                    break;
+                case "5":
+                    offset = 15.0f;
+                    break;
+            }
         }
+        else
+            GetComponent<BodyController>().enabled = false;
+
     }
 
     void LateUpdate()

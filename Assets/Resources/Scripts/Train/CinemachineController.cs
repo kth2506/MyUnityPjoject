@@ -25,37 +25,33 @@ public class CinemachineController : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        // «ÿ¥Á Scene ¿Ã Stage ¿œ ∞ÊøÏø°∏∏ Station ∞¸∑√ «‘ºˆ∏¶ Ω√¿€«‘
-        if(!SceneManager.GetActiveScene().name.Contains("Stage"))
+        //  SceneÏù¥ Stage ÏùºÎïåÎßå ÏûëÎèô
+        if(SceneManager.GetActiveScene().name.Contains("Stage"))
         {
-            GetComponent<CinemachineController>().enabled = false;
+
+            Index = 0;
+            Root = "WayPoint";
+            isStop = false;
+
+            GameObject Obj = GameObject.Find(Root);
+            mesh = transform.GetComponentsInChildren<MeshRenderer>();
+            for (int i = 0; i < Obj.transform.childCount; ++i)
+                target.Add(Obj.transform.GetChild(i));
+            BoomObject = Resources.Load("Prefabs/PlayerBoom") as GameObject;
+            TempAudio = GameObject.Find("EffectSound").GetComponent<AudioSource>();
+            dolly = transform.GetComponent<CinemachineDollyCart>();
+            dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
+            dolly.m_Speed = 20.0f;
+            dolly.m_Position = 20.0f;
+
+
+            StationList.Add(GameObject.Find("Station_0"));
+            StationList.Add(GameObject.Find("Station_1"));
+            for (int i = 0; i < StationList.Count; ++i)
+                StartCoroutine(Plus(StationList[i], i));
         }
-        
-        Index = 0;
-        Root = "WayPoint";
-        isStop = false;
-
-        foreach (GameObject body in BodyList)
-            body.AddComponent<BodyController>();
-
-
-        GameObject Obj = GameObject.Find(Root);
-        mesh = transform.GetComponentsInChildren<MeshRenderer>();
-        for (int i = 0; i < Obj.transform.childCount; ++i)
-            target.Add(Obj.transform.GetChild(i));
-        BoomObject = Resources.Load("Prefabs/PlayerBoom") as GameObject;
-        TempAudio = GameObject.Find("EffectSound").GetComponent<AudioSource>();
-        dolly = transform.GetComponent<CinemachineDollyCart>();
-        dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
-        dolly.m_Speed = 20.0f;
-        dolly.m_Position = 20.0f;
-
-
-        StationList.Add(GameObject.Find("Station_0"));
-        StationList.Add(GameObject.Find("Station_1"));
-        for (int i = 0; i < StationList.Count; ++i)
-            StartCoroutine(Plus(StationList[i], i));
-        
+        else
+            GetComponent<CinemachineController>().enabled = false;
     }
 
 
@@ -171,7 +167,7 @@ public class CinemachineController : MonoBehaviour
     }
 
 
-    // Person ¿Ãµø
+    // Person ÔøΩÃµÔøΩ
     IEnumerator Move(Transform _transform)
     {
         while (true)

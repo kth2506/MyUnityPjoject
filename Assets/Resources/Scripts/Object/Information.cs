@@ -30,6 +30,7 @@ public class Information : MonoBehaviour
             StageStar.Add("Stage" + i.ToString(), 0);
         }
     }
+
     public void PlayerSelect(int _Index)
     {
         pIndex = _Index;
@@ -41,6 +42,11 @@ public class Information : MonoBehaviour
     public void StageSelect(int _num)
     {
         StageNum = _num;
+    }
+
+    public void Index(int n)
+    {
+        pIndex += n;
     }
 
     public void SetStar()
