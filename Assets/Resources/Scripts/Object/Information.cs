@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Information : MonoBehaviour
 {
     public static Information Instance;
-    private int pIndex = 1;
+    [SerializeField] private int pIndex = 1;
     public int StageNum;
     public List<int> StageScore;
     public Dictionary<string, int> StageStar = new Dictionary<string, int>();
@@ -14,7 +14,7 @@ public class Information : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        if (Instance != null)
+        if (!object.ReferenceEquals(Instance, null))
         {
             Destroy(gameObject);
             return;

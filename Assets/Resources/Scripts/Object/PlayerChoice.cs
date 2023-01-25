@@ -13,7 +13,7 @@ public class PlayerChoice : MonoBehaviour
 
     public void PlayerChange()
     {
-        info = FindObjectOfType<Information>();
+        
         if (info.GetIndex() > 5)
             info.PlayerSelect(1);
         if (info.GetIndex() < 1)
@@ -30,11 +30,13 @@ public class PlayerChoice : MonoBehaviour
 
     public void Left()
     {
+        info = FindObjectOfType<Information>();
         info.Index(-1);
         PlayerChange();
     }
     public void Right()
     {
+        info = FindObjectOfType<Information>();
         info.Index(1);
         PlayerChange();
     }

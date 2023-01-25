@@ -26,14 +26,11 @@ public class FollowCamera : MonoBehaviour
     void Start()
     {
         Offset = new Vector3(-60.0f, 70.0f, -70.0f);
-        //transform.Rotate(0.0f, 0.0f, 0.0f);
         StartPos = new Vector3(0.0f, 0.0f, 0.0f);
         EndPos = new Vector3(0.0f, 0.0f, 0.0f);
-        //transform.parent = Target.transform;
         CameraQuaternion = new Quaternion();
         CameraAngles = new Vector3(90.0f, 0.0f, 0.0f);
         CameraQuaternion = Quaternion.Euler(CameraAngles);
-        Target = GameObject.FindWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -54,7 +51,7 @@ public class FollowCamera : MonoBehaviour
         }
         else
         {
-            Target = GameObject.FindWithTag("Player").transform;
+            Target = GameObject.FindObjectOfType<CinemachineController>().transform;
         }
         //**부드러운 회전
         //if (Input.GetMouseButtonDown(0))
