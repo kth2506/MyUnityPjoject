@@ -28,7 +28,6 @@ public class BodyController : MonoBehaviour
             dolly = transform.GetComponent<CinemachineDollyCart>();
             dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
             dolly.m_Speed = 0.0f;
-
             switch (transform.name)
             {
                 case "1":
@@ -62,7 +61,7 @@ public class BodyController : MonoBehaviour
             Index++;
             dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
 
-            dolly.m_Position = 0.0f;
+            dolly.m_Position = 20.0f - offset;
         }
 
     }

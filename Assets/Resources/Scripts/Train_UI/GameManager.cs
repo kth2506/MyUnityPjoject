@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 0;
         ClearPanel.SetActive(true);
         //UIPanel.transform.position = Vector2.Lerp(UIPanel.transform.position, new Vector2(960, 540), 10.0f);
         AudioSource audio = Camera.main.GetComponent<AudioSource>();
@@ -114,6 +114,6 @@ public class GameManager : MonoBehaviour
     }
     public void SceneMain()
     {
-        SceneManager.LoadScene("LoadingScene1");
+        SceneManager.LoadScene("Stage");
     }
 }

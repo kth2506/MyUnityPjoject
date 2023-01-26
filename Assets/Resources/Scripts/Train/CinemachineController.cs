@@ -65,7 +65,7 @@ public class CinemachineController : MonoBehaviour
         {
             Index++;
             dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
-            dolly.m_Position = 0.0f;
+            dolly.m_Position = 20.0f;
         }
         
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -125,8 +125,6 @@ public class CinemachineController : MonoBehaviour
                         for (int j = 0; j < CubeList.Count; ++j)
                         {
                             CubeList[j].SetActive(false);
-                            //CubeList[j].transform.position
-                            
                         }
 
                         yield return new WaitForSeconds(0.5f);
@@ -190,6 +188,14 @@ public class CinemachineController : MonoBehaviour
             FindObjectOfType<GameManager>().EndGame();
             GameObject Obj = Instantiate(Resources.Load("Prefabs/Explosion") as GameObject);
             Obj.transform.position = transform.position;
+
+            foreach(GameObject element in BodyList)
+            {
+                element.GetComponent<CinemachineDollyCart>().enabled = false;
+                element.GetComponent<BodyController>().enabled = false;
+                element.GetComponentInChildren<Rigidbody>().AddForce
+                    (transform.forward);
+            }
         }
     }
 
