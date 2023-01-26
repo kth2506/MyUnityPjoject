@@ -55,12 +55,11 @@ public class CinemachineController : MonoBehaviour
     }
 
 
-
-
     // Update is called once per frame
     void Update()
     {
-       
+        Debug.Log("Path" + dolly.m_Path.transform.position);
+        Debug.Log("Transfrom" + dolly.transform.position);
         if (dolly.m_Position >= dolly.m_Path.PathLength)
         {
             Index++;
@@ -227,4 +226,9 @@ public class CinemachineController : MonoBehaviour
        
     }
 
+
+    public void ChangeCourse()
+    {
+
+    }
 }

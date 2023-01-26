@@ -406,6 +406,7 @@
 "Assets/Resources/Scripts/Train/BodyController.cs"
 "Assets/Resources/Scripts/Train/CameraManager.cs"
 "Assets/Resources/Scripts/Train/CinemachineController.cs"
+"Assets/Resources/Scripts/Train/SwitchController.cs"
 "Assets/Resources/Scripts/Train_UI/GameManager.cs"
 "Assets/Resources/Scripts/Train_UI/Score.cs"
 "Assets/Resources/Scripts/Train_UI/SettingsMenu.cs"
