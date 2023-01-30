@@ -8,9 +8,13 @@ public class PlayerChoice : MonoBehaviour
     
     [SerializeField] private GameObject Player;
     [SerializeField] private Information info;
-    
+
     // Start is called before the first frame update
 
+    private void Start()
+    {
+        info = FindObjectOfType<Information>();
+    }
     public void PlayerChange()
     {
         
@@ -22,21 +26,35 @@ public class PlayerChoice : MonoBehaviour
         Player = Resources.Load("Prefabs/Vehicles/Vehicles" + info.GetIndex().ToString()) as GameObject;
         GameObject Obj = Instantiate(Player);
         //Obj.transform.localRotation = new Quaternion(0.0f, 0.0f, 0.0f, 0);
-        Obj.transform.position = transform.position;
+
+        
         Obj.transform.parent = transform;
+        Obj.transform.position = new Vector3(15.0f, 0.0f, 20.0f);
         Obj.name = "Player";
+
+        StartCoroutine(Set(Obj));
 
     }
 
+    IEnumerator Set(GameObject _Object)
+    {
+        float time = 0.0f;
+
+        while(time < 1.0f)
+        {
+            time += Time.deltaTime;
+            _Object.transform.position = Vector3.Lerp
+           (_Object.transform.position, new Vector3(15.0f, 0.0f, -20.0f), 1.0f);
+            yield return null;
+        }
+    }
     public void Left()
     {
-        info = FindObjectOfType<Information>();
         info.Index(-1);
         PlayerChange();
     }
     public void Right()
     {
-        info = FindObjectOfType<Information>();
         info.Index(1);
         PlayerChange();
     }

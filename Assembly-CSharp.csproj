@@ -79,7 +79,7 @@
     <Compile Include="Assets\Resources\DownloadResources\Spline Walker Train\BezierControlPointMode.cs" />
     <Compile Include="Assets\Resources\DownloadResources\Spline Walker Train\BezierCurve.cs" />
     <Compile Include="Assets\Resources\Scripts\Example\FrustumLine.cs" />
-    <Compile Include="Assets\Resources\Scripts\Object\FollowCamera.cs" />
+    <Compile Include="Assets\Resources\Scripts\Train\FollowCamera.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
     <Compile Include="Assets\Resources\Scripts\View\FieldOfView.cs" />
     <Compile Include="Assets\Resources\Scripts\Object\PlayerInit.cs" />
@@ -123,12 +123,13 @@
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_Translate.cs" />
     <Compile Include="Assets\Resources\Scripts\Train_UI\Stage.cs" />
     <Compile Include="Assets\Resources\Scripts\Object\StationController.cs" />
+    <Compile Include="Assets\Resources\Scripts\Train\SwitchController.cs" />
     <Compile Include="Assets\Resources\Scripts\Architecture\Poolable.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
     <Compile Include="Assets\Resources\Scripts\Train_UI\SettingsMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\PlayerStop.cs" />
-    <Compile Include="Assets\Resources\Scripts\Train\SwitchController.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\StageSelect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />

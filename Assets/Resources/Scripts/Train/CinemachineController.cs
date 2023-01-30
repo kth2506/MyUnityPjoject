@@ -22,6 +22,8 @@ public class CinemachineController : MonoBehaviour
     
     private List<int> ScoreList = new List<int>();
     private bool isStop;
+    private bool isFirstStop;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -32,7 +34,7 @@ public class CinemachineController : MonoBehaviour
             Index = 0;
             Root = "WayPoint";
             isStop = false;
-
+            isFirstStop = false;
             GameObject Obj = GameObject.Find(Root);
             mesh = transform.GetComponentsInChildren<MeshRenderer>();
             for (int i = 0; i < Obj.transform.childCount; ++i)
@@ -58,8 +60,6 @@ public class CinemachineController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Path" + dolly.m_Path.transform.position);
-        Debug.Log("Transfrom" + dolly.transform.position);
         if (dolly.m_Position >= dolly.m_Path.PathLength)
         {
             Index++;
@@ -110,8 +110,16 @@ public class CinemachineController : MonoBehaviour
         ScoreList.Add(0);
         while(true)
         {
-            if (Vector3.Distance(_Target.transform.position, transform.position) < 20.0f)
+            
+
+            if (Vector3.Distance(_Target.transform.position, transform.position) < 18.0f)
             {
+                if (!isFirstStop)
+                {
+                    isFirstStop = true;
+                    StartCoroutine(SlowlyStop());
+                }
+
                 Score score = GameObject.Find("Score").GetComponent<Score>();
                 for(int i = 0; i < ScoreList.Count; ++i)
                 {
@@ -126,7 +134,7 @@ public class CinemachineController : MonoBehaviour
                             CubeList[j].SetActive(false);
                         }
 
-                        yield return new WaitForSeconds(0.5f);
+                        yield return new WaitForSeconds(0.7f);
                     }
                 }
                 Transform[] childList = GameObject.Find(_Target.name).
@@ -156,7 +164,7 @@ public class CinemachineController : MonoBehaviour
                     }
                 }
             }
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(1.3f);
 
         }
         
@@ -214,15 +222,18 @@ public class CinemachineController : MonoBehaviour
             while (dolly.m_Speed > 0.0f)
             {
                 dolly.m_Speed -= Time.deltaTime * 50;
-                transform.Rotate(0.0f, 0.0f, 15);
-
+                //transform.Rotate(0.0f, 0.0f, 15);
+                transform.eulerAngles = new Vector3(0.0f, 0.0f, 15.0f);
                 yield return null;
             }
             dolly.m_Speed = 0.0f;
             
         }
         else
+        {
+            isFirstStop = false;
             dolly.m_Speed = 20.0f;
+        }
        
     }
 

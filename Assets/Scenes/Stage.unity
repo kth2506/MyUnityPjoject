@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 16265445}
   - component: {fileID: 16265444}
   m_Layer: 5
-  m_Name: Stage 8
+  m_Name: Stage8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -449,7 +449,7 @@ RectTransform:
   - {fileID: 815336520}
   - {fileID: 1578686952}
   m_Father: {fileID: 116200224}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1737,6 +1737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 116200224}
+  - component: {fileID: 116200225}
   m_Layer: 5
   m_Name: StageSelect
   m_TagString: Untagged
@@ -1756,7 +1757,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1040035813}
   - {fileID: 1622025218}
   - {fileID: 749966964}
   - {fileID: 513032259}
@@ -1766,6 +1766,7 @@ RectTransform:
   - {fileID: 628610266}
   - {fileID: 16265443}
   - {fileID: 199988018}
+  - {fileID: 1040035813}
   m_Father: {fileID: 336451579}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1774,6 +1775,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &116200225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116200223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecac42be4135060499bccbd3493e4b79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &118229398
 GameObject:
   m_ObjectHideFlags: 0
@@ -2950,7 +2963,7 @@ GameObject:
   - component: {fileID: 199988020}
   - component: {fileID: 199988019}
   m_Layer: 5
-  m_Name: Stage 9
+  m_Name: Stage9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2971,7 +2984,7 @@ RectTransform:
   - {fileID: 2009113376}
   - {fileID: 567284444}
   m_Father: {fileID: 116200224}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6907,7 +6920,7 @@ GameObject:
   - component: {fileID: 474631035}
   - component: {fileID: 474631034}
   m_Layer: 5
-  m_Name: Stage 6
+  m_Name: Stage6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6928,7 +6941,7 @@ RectTransform:
   - {fileID: 1576279813}
   - {fileID: 1334701424}
   m_Father: {fileID: 116200224}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7563,7 +7576,7 @@ RectTransform:
   - {fileID: 1063908812}
   - {fileID: 934237452}
   m_Father: {fileID: 116200224}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7617,18 +7630,6 @@ MonoBehaviour:
       - m_Target: {fileID: 221403383}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 221403381}
-        m_TargetAssemblyTypeName: UI_Menu, Assembly-CSharp
-        m_MethodName: Stage3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8563,7 +8564,7 @@ MonoBehaviour:
     width: 0.2
   m_Looped: 0
   m_Waypoints:
-  - position: {x: 15, y: 0, z: 50}
+  - position: {x: 15, y: 0, z: 90}
     tangent: {x: 0, y: 0, z: 0}
     roll: 0
   - position: {x: 15, y: 0, z: -500}
@@ -8587,7 +8588,7 @@ GameObject:
   - component: {fileID: 628610268}
   - component: {fileID: 628610267}
   m_Layer: 5
-  m_Name: Stage 7
+  m_Name: Stage7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8608,7 +8609,7 @@ RectTransform:
   - {fileID: 1918022586}
   - {fileID: 1305576265}
   m_Father: {fileID: 116200224}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9924,7 +9925,7 @@ RectTransform:
   - {fileID: 1268102678}
   - {fileID: 401158149}
   m_Father: {fileID: 116200224}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9978,18 +9979,6 @@ MonoBehaviour:
       - m_Target: {fileID: 221403383}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 221403381}
-        m_TargetAssemblyTypeName: UI_Menu, Assembly-CSharp
-        m_MethodName: Stage2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12938,7 +12927,7 @@ RectTransform:
   m_Children:
   - {fileID: 1976855774}
   m_Father: {fileID: 116200224}
-  m_RootOrder: 0
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17619,7 +17608,7 @@ RectTransform:
   - {fileID: 500760997}
   - {fileID: 1990546261}
   m_Father: {fileID: 116200224}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20842,7 +20831,7 @@ GameObject:
   - component: {fileID: 1613246109}
   - component: {fileID: 1613246108}
   m_Layer: 5
-  m_Name: Stage 5
+  m_Name: Stage5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20863,7 +20852,7 @@ RectTransform:
   - {fileID: 2070080564}
   - {fileID: 1860860048}
   m_Father: {fileID: 116200224}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21060,7 +21049,7 @@ RectTransform:
   - {fileID: 1552218500}
   - {fileID: 609243590}
   m_Father: {fileID: 116200224}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21114,18 +21103,6 @@ MonoBehaviour:
       - m_Target: {fileID: 221403383}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 221403381}
-        m_TargetAssemblyTypeName: UI_Menu, Assembly-CSharp
-        m_MethodName: Stage1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

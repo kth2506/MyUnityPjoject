@@ -25,6 +25,7 @@ public class FollowCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Camera.main.orthographicSize = 25.0f;
         Offset = new Vector3(-60.0f, 70.0f, -70.0f);
         StartPos = new Vector3(0.0f, 0.0f, 0.0f);
         EndPos = new Vector3(0.0f, 0.0f, 0.0f);
