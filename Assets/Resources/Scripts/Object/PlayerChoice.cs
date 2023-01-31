@@ -39,12 +39,11 @@ public class PlayerChoice : MonoBehaviour
     IEnumerator Set(GameObject _Object)
     {
         float time = 0.0f;
-
         while(time < 1.0f)
         {
             time += Time.deltaTime;
             _Object.transform.position = Vector3.Lerp
-           (_Object.transform.position, new Vector3(15.0f, 0.0f, -20.0f), 1.0f);
+           (_Object.transform.position, new Vector3(15.0f, 0.0f, -20.0f), Time.deltaTime * 2);
             yield return null;
         }
     }

@@ -27,7 +27,9 @@ public class BodyController : MonoBehaviour
                 target.Add(Obj.transform.GetChild(i));
             dolly = transform.GetComponent<CinemachineDollyCart>();
             dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
-            dolly.m_Speed = 0.0f;
+            dolly.m_Speed = 20.0f;
+
+            
             switch (transform.name)
             {
                 case "1":
@@ -45,7 +47,11 @@ public class BodyController : MonoBehaviour
                 case "5":
                     offset = 15.0f;
                     break;
+                case "6":
+                    offset = 18.0f;
+                    break;
             }
+            dolly.m_Position = 20.0f - offset;
         }
         else
             GetComponent<BodyController>().enabled = false;
@@ -54,14 +60,14 @@ public class BodyController : MonoBehaviour
 
     void LateUpdate()
     {
-        dolly.m_Position = Train.GetComponent<CinemachineDollyCart>().m_Position - offset;
-        dolly.m_Path = Train.GetComponent<CinemachineDollyCart>().m_Path;
-        if (dolly.m_Position >= dolly.m_Path.PathLength && target.Count > Index + 1)
+        //dolly.m_Position = Train.GetComponent<CinemachineDollyCart>().m_Position - offset;
+        //dolly.m_Path = Train.GetComponent<CinemachineDollyCart>().m_Path;
+        if (dolly.m_Position + 3.0f >= dolly.m_Path.PathLength && target.Count > Index + 1 && !target[Index].gameObject.GetComponent<CinemachinePath>().Looped)
         {
             Index++;
             dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
 
-            dolly.m_Position = 20.0f - offset;
+            dolly.m_Position = 0.0f;
         }
 
     }

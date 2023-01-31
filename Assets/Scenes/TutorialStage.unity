@@ -1010,8 +1010,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 418198081}
+  - component: {fileID: 418198082}
   m_Layer: 0
-  m_Name: Way2
+  m_Name: Way3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1025,13 +1026,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418198080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -35, y: 0, z: -120}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 715864029}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &418198082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418198080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37e5385efd7064cb1d54c94960acae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Resolution: 20
+  m_Appearance:
+    pathColor: {r: 0, g: 1, b: 0, a: 1}
+    inactivePathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    width: 0.2
+  m_Looped: 0
+  m_Waypoints:
+  - position: {x: 0, y: 0, z: 0}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: 0, y: 0, z: -30}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
 --- !u!1001 &426606463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1160,6 +1186,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7530438843042177319, guid: 3dbc6b5c9155dad4890fdacce73e285a, type: 3}
   m_PrefabInstance: {fileID: 1511462626}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &479808046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 479808047}
+  - component: {fileID: 479808048}
+  m_Layer: 0
+  m_Name: Way2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &479808047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479808046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -35, y: 0, z: -120}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 715864029}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &479808048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479808046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37e5385efd7064cb1d54c94960acae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Resolution: 33
+  m_Appearance:
+    pathColor: {r: 0, g: 1, b: 0, a: 1}
+    inactivePathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    width: 2.07
+  m_Looped: 1
+  m_Waypoints:
+  - position: {x: 0, y: 0, z: 0}
+    tangent: {x: 0, y: 0, z: -6.84}
+    roll: 0
+  - position: {x: 20, y: 0, z: -20}
+    tangent: {x: 13.1, y: 0, z: 0}
+    roll: 0
+  - position: {x: 40, y: 0, z: 0}
+    tangent: {x: 0, y: 0, z: 6.5}
+    roll: 0
+  - position: {x: 20, y: 0, z: 20}
+    tangent: {x: -14.1, y: 0, z: 0}
+    roll: 0
 --- !u!1001 &482954178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1948,7 +2037,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1318713509}
+  - {fileID: 479808047}
   - {fileID: 418198081}
+  - {fileID: 1530374749}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3461,22 +3552,7 @@ MonoBehaviour:
   - position: {x: -35, y: 0, z: -60}
     tangent: {x: 0, y: 0, z: -8.4}
     roll: 0
-  - position: {x: -35, y: 0, z: -120}
-    tangent: {x: 0, y: 0, z: 0}
-    roll: 0
-  - position: {x: -15, y: 0, z: -140}
-    tangent: {x: 18, y: 0, z: 0}
-    roll: 0
-  - position: {x: 5, y: 0, z: -120}
-    tangent: {x: 0, y: 0, z: 2.71}
-    roll: 0
-  - position: {x: -15, y: 0, z: -100}
-    tangent: {x: -18.55, y: 0, z: 0}
-    roll: 0
-  - position: {x: -35, y: 0, z: -120}
-    tangent: {x: 0, y: 0, z: -5.92}
-    roll: 0
-  - position: {x: -35, y: 0, z: -140}
+  - position: {x: -35, y: 0, z: -123}
     tangent: {x: 0, y: 0, z: 0}
     roll: 0
 --- !u!1001 &1319020076
@@ -3931,6 +4007,90 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dbc6b5c9155dad4890fdacce73e285a, type: 3}
+--- !u!1 &1530374748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1530374749}
+  - component: {fileID: 1530374750}
+  m_Layer: 0
+  m_Name: Way1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1530374749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530374748}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 715864029}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1530374750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530374748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37e5385efd7064cb1d54c94960acae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Resolution: 20
+  m_Appearance:
+    pathColor: {r: 0, g: 1, b: 0, a: 1}
+    inactivePathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    width: 1.94
+  m_Looped: 0
+  m_Waypoints:
+  - position: {x: 15, y: 0, z: 70}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: 15, y: 0, z: -20}
+    tangent: {x: 0, y: 0, z: -12.28}
+    roll: 0
+  - position: {x: -5, y: 0, z: -40}
+    tangent: {x: -6.61, y: 0, z: 0}
+    roll: 0
+  - position: {x: -20, y: 0, z: -40}
+    tangent: {x: -6.13, y: 0, z: 0}
+    roll: 0
+  - position: {x: -35, y: 0, z: -60}
+    tangent: {x: 0, y: 0, z: -8.4}
+    roll: 0
+  - position: {x: -35, y: 0, z: -120}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -15, y: 0, z: -140}
+    tangent: {x: 18, y: 0, z: 0}
+    roll: 0
+  - position: {x: 5, y: 0, z: -120}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
+  - position: {x: -15, y: 0, z: -100}
+    tangent: {x: -18.55, y: 0, z: 2.79}
+    roll: 0
+  - position: {x: -35, y: 0, z: -120}
+    tangent: {x: 0, y: 0, z: 1.01}
+    roll: 0
+  - position: {x: -35, y: 0, z: -140}
+    tangent: {x: 0, y: 0, z: 0}
+    roll: 0
 --- !u!1001 &1539203929
 PrefabInstance:
   m_ObjectHideFlags: 0

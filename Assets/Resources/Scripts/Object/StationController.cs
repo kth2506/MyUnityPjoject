@@ -21,25 +21,27 @@ public class StationController : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(3.0f);
-            GameObject Obj = Instantiate(Person);
-            
-            if(transform.forward.x == 0.0f)
+            if(PersonList.Count < 10)
             {
-                Obj.transform.rotation = Quaternion.Euler(270.0f, 90.0f, 0.0f);
-                Obj.transform.position = transform.position + new Vector3(
-                 Random.Range(-3.0f, 3.0f) * transform.forward.z,
-                 0.5f,
-                 Random.Range(-15.0f, -1.0f) * transform.forward.z);
+                GameObject Obj = Instantiate(Person);
+
+                if (transform.forward.x == 0.0f)
+                {
+                    Obj.transform.rotation = Quaternion.Euler(270.0f, 90.0f, 0.0f);
+                    Obj.transform.position = transform.position + new Vector3(
+                     Random.Range(-3.0f, 3.0f) * transform.forward.z,
+                     0.5f,
+                     Random.Range(-15.0f, -1.0f) * transform.forward.z);
+                }
+                else
+                    Obj.transform.position = transform.position + new Vector3(
+                      Random.Range(-15.0f, 3.0f) * transform.forward.x,
+                          0.5f,
+                          Random.Range(-3.0f, 5.0f) * transform.forward.x);
+                Obj.transform.parent = transform;
+                PersonList.Add(Obj);
             }
-            else
-                Obj.transform.position = transform.position + new Vector3(
-                  Random.Range(-15.0f, 3.0f) * transform.forward.x,
-                      0.5f,
-                      Random.Range(-3.0f, 5.0f) * transform.forward.x);
-            Obj.transform.parent = transform;
-            PersonList.Add(Obj);
         }
-      
     }
    
 }

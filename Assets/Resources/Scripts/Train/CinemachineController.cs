@@ -43,8 +43,8 @@ public class CinemachineController : MonoBehaviour
             TempAudio = GameObject.Find("EffectSound").GetComponent<AudioSource>();
             dolly = transform.GetComponent<CinemachineDollyCart>();
             dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
-            dolly.m_Speed = 20.0f;
-            dolly.m_Position = 20.0f;
+            //dolly.m_Speed = 20.0f;
+            //dolly.m_Position = 20.0f;
 
 
             StationList.Add(GameObject.Find("Station_0"));
@@ -60,12 +60,18 @@ public class CinemachineController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dolly.m_Position >= dolly.m_Path.PathLength)
-        {
-            Index++;
-            dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
-            dolly.m_Position = 20.0f;
-        }
+        
+        //foreach(GameObject element in BodyList)
+        //{
+        //    element.GetComponent<CinemachineDollyCart>().m_Position = dolly.m_Position - 
+        //}
+
+        //if (dolly.m_Position + 3.0f >= dolly.m_Path.PathLength && target.Count > Index + 1)
+        //{
+        //    Index++;
+        //    dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
+        //    dolly.m_Position = 20.0f;
+        //}
         
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -88,7 +94,7 @@ public class CinemachineController : MonoBehaviour
                 }
                if (Input.GetMouseButtonDown(0))
                {
-                       StartCoroutine(SlowlyStop());
+                    StartCoroutine(SlowlyStop());
                }
             }
             else

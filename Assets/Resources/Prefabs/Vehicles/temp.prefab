@@ -2097,8 +2097,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987746995860798424}
   m_LocalRotation: {x: -0.7071068, y: 0.00000029502792, z: 0.00000029502797, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0.36499995, z: 1.3199999}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.3649999, z: 1.3199999}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5738403982391828794}
@@ -9575,7 +9575,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: []
   StationList: []
-  Enemy: {fileID: 0}
   Coin: {fileID: 0}
   mesh: []
   TempAudio: {fileID: 0}

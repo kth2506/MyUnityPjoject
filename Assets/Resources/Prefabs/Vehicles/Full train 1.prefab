@@ -6288,7 +6288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: []
   StationList: []
-  Enemy: {fileID: 0}
+  Coin: {fileID: 0}
+  mesh: []
   TempAudio: {fileID: 0}
   CubeList:
   - {fileID: 3250747172531419607}
@@ -6299,9 +6300,7 @@ MonoBehaviour:
   - {fileID: 5230791455671211500}
   - {fileID: 1717392750272625762}
   - {fileID: 7507198514313878278}
-  gameManager: {fileID: 0}
-  StopAnim: {fileID: 0}
-  mesh: []
+  BodyList: []
 --- !u!54 &6462789731269797892
 Rigidbody:
   m_ObjectHideFlags: 0

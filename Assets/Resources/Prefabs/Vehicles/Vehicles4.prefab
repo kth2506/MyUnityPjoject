@@ -294,7 +294,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: []
   StationList: []
-  Enemy: {fileID: 0}
   Coin: {fileID: 6662428869203078958, guid: 091d624c886f59e40ac3dc010bd00a5b, type: 3}
   mesh: []
   TempAudio: {fileID: 0}
@@ -799,7 +798,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2630199192721112957}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.55}
+  m_LocalPosition: {x: 0, y: 0.1, z: -0.17000031}
   m_LocalScale: {x: 0.85, y: 0.84999996, z: 0.84999996}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -866,7 +865,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3684476085213695043}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.28}
+  m_LocalPosition: {x: 0, y: 0.1, z: 2.1}
   m_LocalScale: {x: 0.85, y: 0.84999996, z: 0.84999996}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1297,7 +1296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6112717877378520257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.0484998}
+  m_LocalPosition: {x: 0, y: 0.1, z: 5.428499}
   m_LocalScale: {x: 0.85, y: 0.84999996, z: 0.84999996}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1364,7 +1363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6284389189204520423}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9.27}
+  m_LocalPosition: {x: 0, y: 0.1, z: -5.890001}
   m_LocalScale: {x: 0.85, y: 0.84999996, z: 0.84999996}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1431,7 +1430,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6825587572910776344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5.88}
+  m_LocalPosition: {x: 0, y: 0.1, z: -2.5000005}
   m_LocalScale: {x: 0.85, y: 0.84999996, z: 0.84999996}
   m_ConstrainProportionsScale: 0
   m_Children:

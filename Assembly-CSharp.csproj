@@ -62,6 +62,7 @@
     <Compile Include="Assets\Resources\Scripts\View\JoyStickController.cs" />
     <Compile Include="Assets\Resources\Scripts\Train_UI\UI_Menu.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\StageSelect.cs" />
     <Compile Include="Assets\Resources\Scripts\Object\PlayerChoice.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\ToggleController.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\SkillInventoryController.cs" />
@@ -129,7 +130,6 @@
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
     <Compile Include="Assets\Resources\Scripts\Train_UI\SettingsMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\PlayerStop.cs" />
-    <Compile Include="Assets\Resources\Scripts\UI\StageSelect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />

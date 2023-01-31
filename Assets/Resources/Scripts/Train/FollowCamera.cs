@@ -52,7 +52,7 @@ public class FollowCamera : MonoBehaviour
         }
         else
         {
-            Target = GameObject.FindObjectOfType<CinemachineController>().transform;
+            Target = GameObject.FindGameObjectWithTag("Player").transform;
         }
         //**부드러운 회전
         //if (Input.GetMouseButtonDown(0))

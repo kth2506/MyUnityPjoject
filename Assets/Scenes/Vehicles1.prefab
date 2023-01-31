@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 2933227210560294187}
   m_Layer: 0
   m_Name: Vehicles1
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -507,7 +507,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: []
   StationList: []
-  Enemy: {fileID: 0}
   Coin: {fileID: 6662428869203078958, guid: 091d624c886f59e40ac3dc010bd00a5b, type: 3}
   mesh: []
   TempAudio: {fileID: 0}
