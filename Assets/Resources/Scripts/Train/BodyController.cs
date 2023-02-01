@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class BodyController : MonoBehaviour
 {
     [SerializeField] private List<Transform> target;
-    [SerializeField] private GameObject Train;
     private CinemachineDollyCart dolly;
     private float offset;
     private int Index;
@@ -29,7 +28,10 @@ public class BodyController : MonoBehaviour
             dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
             dolly.m_Speed = 20.0f;
 
-            
+            float Size = transform.GetChild(0).GetComponent<Collider>().bounds.size.x
+                * transform.GetChild(0).GetComponent<Collider>().bounds.size.z;
+            Debug.Log(Size + "   " + transform.GetChild(0).name);
+            Debug.Log(transform.GetChild(0).GetComponent<Collider>().bounds.size + "   " + transform.GetChild(0).name);
             switch (transform.name)
             {
                 case "1":
@@ -42,7 +44,7 @@ public class BodyController : MonoBehaviour
                     offset = 7.3f;
                     break;
                 case "4":
-                    offset = 10.5f;
+                    offset = 11.5f;
                     break;
                 case "5":
                     offset = 15.0f;
@@ -64,10 +66,11 @@ public class BodyController : MonoBehaviour
         //dolly.m_Path = Train.GetComponent<CinemachineDollyCart>().m_Path;
         if (dolly.m_Position + 3.0f >= dolly.m_Path.PathLength && target.Count > Index + 1 && !target[Index].gameObject.GetComponent<CinemachinePath>().Looped)
         {
+            float temp = dolly.m_Path.PathLength - 2.9f;
             Index++;
             dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
+            dolly.m_Position -= temp;
 
-            dolly.m_Position = 0.0f;
         }
 
     }

@@ -19,7 +19,7 @@ public class CinemachineController : MonoBehaviour
     private CinemachineDollyCart dolly;
     private int Index;
     private string Root;
-    
+    [SerializeField] private Transform PlayerPosition;
     private List<int> ScoreList = new List<int>();
     private bool isStop;
     private bool isFirstStop;
@@ -30,7 +30,7 @@ public class CinemachineController : MonoBehaviour
         //  Scene이 Stage 일때만 작동
         if(SceneManager.GetActiveScene().name.Contains("Stage"))
         {
-
+            
             Index = 0;
             Root = "WayPoint";
             isStop = false;
@@ -60,7 +60,7 @@ public class CinemachineController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = PlayerPosition.position;
         //foreach(GameObject element in BodyList)
         //{
         //    element.GetComponent<CinemachineDollyCart>().m_Position = dolly.m_Position - 

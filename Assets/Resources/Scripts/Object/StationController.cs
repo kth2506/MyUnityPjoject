@@ -21,6 +21,11 @@ public class StationController : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(3.0f);
+            for(int i = 0; i < PersonList.Count; ++i)
+            {
+                if (!PersonList[i])
+                    PersonList.RemoveAt(i);
+            }
             if(PersonList.Count < 10)
             {
                 GameObject Obj = Instantiate(Person);
@@ -43,5 +48,5 @@ public class StationController : MonoBehaviour
             }
         }
     }
-   
+  
 }
