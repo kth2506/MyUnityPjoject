@@ -8,17 +8,22 @@ using UnityEngine.SceneManagement;
 public class BodyController : MonoBehaviour
 {
     [SerializeField] private List<Transform> target;
+    [SerializeField] private GameObject articulation;
     private CinemachineDollyCart dolly;
-    private float offset;
+
+    
+    public float offset;
     private int Index;
     private string Root;
-
-
+    private bool isExpected;
+    float time;
 
     private void Awake()
     {
+        // 해당 Scene이 Stage일 경우에만 이 스크립트를 활성화
         if (SceneManager.GetActiveScene().name.Contains("Stage"))
         {
+            isExpected = false;
             Index = 0;
             Root = "WayPoint";
             GameObject Obj = GameObject.Find(Root);
@@ -26,52 +31,51 @@ public class BodyController : MonoBehaviour
                 target.Add(Obj.transform.GetChild(i));
             dolly = transform.GetComponent<CinemachineDollyCart>();
             dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
+           
             dolly.m_Speed = 20.0f;
+            
 
-            float Size = transform.GetChild(0).GetComponent<Collider>().bounds.size.x
-                * transform.GetChild(0).GetComponent<Collider>().bounds.size.z;
-            Debug.Log(Size + "   " + transform.GetChild(0).name);
-            Debug.Log(transform.GetChild(0).GetComponent<Collider>().bounds.size + "   " + transform.GetChild(0).name);
-            switch (transform.name)
-            {
-                case "1":
-                    offset = 0.0f;
-                    break;
-                case "2":
-                    offset = 4.2f;
-                    break;
-                case "3":
-                    offset = 7.3f;
-                    break;
-                case "4":
-                    offset = 11.5f;
-                    break;
-                case "5":
-                    offset = 15.0f;
-                    break;
-                case "6":
-                    offset = 18.0f;
-                    break;
-            }
-            dolly.m_Position = 20.0f - offset;
+            offset = transform.GetComponentInChildren<Collider>().bounds.size.z;
+            
         }
         else
             GetComponent<BodyController>().enabled = false;
 
     }
 
+    private void Start()
+    {
+        
+    }
+
     void LateUpdate()
     {
-        //dolly.m_Position = Train.GetComponent<CinemachineDollyCart>().m_Position - offset;
-        //dolly.m_Path = Train.GetComponent<CinemachineDollyCart>().m_Path;
-        if (dolly.m_Position + 3.0f >= dolly.m_Path.PathLength && target.Count > Index + 1 && !target[Index].gameObject.GetComponent<CinemachinePath>().Looped)
+        time += Time.deltaTime;
+        if (dolly.m_Position + 3.0f >= dolly.m_Path.PathLength)
         {
-            float temp = dolly.m_Path.PathLength - 2.9f;
-            Index++;
-            dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
-            dolly.m_Position -= temp;
+            if(target.Count > Index + 1 && !target[Index].gameObject.GetComponent<CinemachinePath>().Looped)
+            {
+                float temp = dolly.m_Path.PathLength - 2.9f;
+                Index++;
+                dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
+                dolly.m_Position -= temp;
+            }
+            if(isExpected == true)
+            {
+                float temp = dolly.m_Path.PathLength - 2.9f;
+
+                dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
+                dolly.m_Position -= temp;
+
+                isExpected = false;
+            }
+            
 
         }
 
+    }
+
+    public void ChangeCourse()
+    {
     }
 }

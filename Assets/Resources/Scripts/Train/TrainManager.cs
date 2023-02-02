@@ -210,8 +210,6 @@ public class TrainManager : MonoBehaviour
             foreach(GameObject element in BodyList)
             {
                 dollyList.Add(element.GetComponentInChildren<CinemachineDollyCart>());
-             
-
             }
             foreach(CinemachineDollyCart element in dollyList)
             {

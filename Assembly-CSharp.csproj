@@ -84,6 +84,7 @@
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
     <Compile Include="Assets\Resources\Scripts\View\FieldOfView.cs" />
     <Compile Include="Assets\Resources\Scripts\Object\PlayerInit.cs" />
+    <Compile Include="Assets\Resources\Scripts\Train\TrainManager.cs" />
     <Compile Include="Assets\Resources\DownloadResources\Spline Walker Train\SwtWagon.cs" />
     <Compile Include="Assets\Resources\Scripts\Example\Point.cs" />
     <Compile Include="Assets\Resources\Scripts\Architecture\Object.cs" />
@@ -130,7 +131,6 @@
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
     <Compile Include="Assets\Resources\Scripts\Train_UI\SettingsMenu.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\PlayerStop.cs" />
-    <Compile Include="Assets\Resources\Scripts\Train\TrainManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
