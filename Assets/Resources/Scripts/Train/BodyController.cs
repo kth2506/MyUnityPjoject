@@ -34,9 +34,28 @@ public class BodyController : MonoBehaviour
            
             dolly.m_Speed = 20.0f;
             
+            switch(transform.name)
+            {
+                case "1":
+                   offset =  0.0f;
+                    break;
+                case "2":
+                    offset = 3.4f;
+                    break;
+                case "3":
+                    offset = 6.3f;
+                    break;
+                case "4":
+                    offset = 9.2f;
+                    break;
+                case "5":
+                    offset = 12.6f;
+                    break;
+            }
+            //offset = transform.GetComponentInChildren<Collider>().bounds.size.z;
 
-            offset = transform.GetComponentInChildren<Collider>().bounds.size.z;
-            
+
+            dolly.m_Position = 20.0f - offset;
         }
         else
             GetComponent<BodyController>().enabled = false;
@@ -60,15 +79,15 @@ public class BodyController : MonoBehaviour
                 dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
                 dolly.m_Position -= temp;
             }
-            if(isExpected == true)
-            {
-                float temp = dolly.m_Path.PathLength - 2.9f;
+            //if(isExpected == true)
+            //{
+            //    float temp = dolly.m_Path.PathLength - 2.9f;
 
-                dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
-                dolly.m_Position -= temp;
+            //    dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
+            //    dolly.m_Position -= temp;
 
-                isExpected = false;
-            }
+            //    isExpected = false;
+            //}
             
 
         }
