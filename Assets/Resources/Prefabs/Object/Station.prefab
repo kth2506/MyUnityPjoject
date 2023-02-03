@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 1093901443957597098}
   m_Layer: 0
   m_Name: Station
-  m_TagString: Station
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 3252472186235537989}
   m_Layer: 0
   m_Name: Station_1
-  m_TagString: Untagged
+  m_TagString: Station
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

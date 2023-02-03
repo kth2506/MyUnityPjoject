@@ -114,7 +114,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8678756192750476280}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2349334587588336490
 MeshFilter:
@@ -214,8 +214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: []
-  articulation: {fileID: 0}
-  offset: 0
 --- !u!114 &156862267794165796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,8 +262,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 663331422517050533}
-  - {fileID: 5015373403753940262}
   - {fileID: 1241926596126403682}
+  - {fileID: 5015373403753940262}
   m_Father: {fileID: 8954876314007185714}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -282,8 +280,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: []
-  articulation: {fileID: 0}
-  offset: 0
 --- !u!114 &8064564986278845089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,8 +528,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: []
-  articulation: {fileID: 0}
-  offset: 0
 --- !u!114 &3517906318058219176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,7 +559,7 @@ GameObject:
   - component: {fileID: 8591217787367062673}
   m_Layer: 0
   m_Name: DF 4 Wagon (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -863,7 +857,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8678756192750476280}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &728481855012365194
 MeshFilter:
@@ -963,8 +957,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: []
-  articulation: {fileID: 0}
-  offset: 0
 --- !u!114 &7187415061744724498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1295,8 +1287,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: []
-  articulation: {fileID: 0}
-  offset: 0
 --- !u!114 &5938955803746897459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1326,9 +1316,10 @@ GameObject:
   - component: {fileID: 8954876314007185676}
   - component: {fileID: 8954876314007185677}
   - component: {fileID: 8954876314007185712}
+  - component: {fileID: 6117669879741818300}
   m_Layer: 0
   m_Name: Vehicles3
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1423,8 +1414,41 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &6117669879741818300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578737425919341448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85add93c2222075428d76ca2297c7c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StationList: []
+  Coin: {fileID: 0}
+  mesh: []
+  meshList: []
+  TempAudio: {fileID: 0}
+  CubeList:
+  - {fileID: 642489450831739107}
+  - {fileID: 7524914901352052310}
+  - {fileID: 480969550594144166}
+  - {fileID: 6564509442139619860}
+  - {fileID: 8114642444650402574}
+  - {fileID: 7881840898596377816}
+  - {fileID: 3612742388210040150}
+  BodyList:
+  - {fileID: 4781667584613519726}
+  - {fileID: 7750366519223924750}
+  - {fileID: 8351563889659269135}
+  - {fileID: 2151308800172119840}
+  - {fileID: 2791739085631752040}
+  PlayerPosition: {fileID: 0}
+  BodySizeList: []
 --- !u!1 &8808591084883397416
 GameObject:
   m_ObjectHideFlags: 0

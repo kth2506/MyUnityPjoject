@@ -177,12 +177,11 @@ GameObject:
   - component: {fileID: 509418811097646594}
   - component: {fileID: 509418811097646652}
   - component: {fileID: 509418811097646653}
-  - component: {fileID: 509418811097646654}
-  - component: {fileID: 509418811097646655}
   - component: {fileID: 509418811097646592}
+  - component: {fileID: 4687648776382505923}
   m_Layer: 0
   m_Name: Vehicles4
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,52 +262,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &509418811097646654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890025084181339320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a9c787e5d1bbf48a389834c4a9641c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Path: {fileID: 0}
-  m_UpdateMethod: 0
-  m_PositionUnits: 1
-  m_Speed: 0
-  m_Position: 0
---- !u!114 &509418811097646655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890025084181339320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1165068918fa4048b719188d54e0297, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: []
-  StationList: []
-  Coin: {fileID: 6662428869203078958, guid: 091d624c886f59e40ac3dc010bd00a5b, type: 3}
-  mesh: []
-  TempAudio: {fileID: 0}
-  CubeList:
-  - {fileID: 8339920928437131219}
-  - {fileID: 1385440856126019942}
-  - {fileID: 9077975263293528214}
-  - {fileID: 2327832876797373732}
-  - {fileID: 849717338120158270}
-  - {fileID: 1600503741040966632}
-  - {fileID: 5293074446088983142}
-  - {fileID: 3931446724631246082}
-  - {fileID: 7754831559229702175}
-  - {fileID: 181541818136805159}
-  BodyList: []
 --- !u!54 &509418811097646592
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -323,8 +276,44 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &4687648776382505923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890025084181339320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85add93c2222075428d76ca2297c7c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StationList: []
+  Coin: {fileID: 0}
+  mesh: []
+  meshList: []
+  TempAudio: {fileID: 0}
+  CubeList:
+  - {fileID: 8339920928437131219}
+  - {fileID: 1385440856126019942}
+  - {fileID: 9077975263293528214}
+  - {fileID: 2327832876797373732}
+  - {fileID: 849717338120158270}
+  - {fileID: 1600503741040966632}
+  - {fileID: 5293074446088983142}
+  - {fileID: 3931446724631246082}
+  - {fileID: 7754831559229702175}
+  - {fileID: 181541818136805159}
+  BodyList:
+  - {fileID: 6112717877378520257}
+  - {fileID: 3684476085213695043}
+  - {fileID: 2630199192721112957}
+  - {fileID: 6825587572910776344}
+  - {fileID: 6284389189204520423}
+  PlayerPosition: {fileID: 7004432518044520593}
+  BodySizeList: []
 --- !u!1 &1188505192765912489
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,7 +676,7 @@ GameObject:
   - component: {fileID: 6460070444399025133}
   m_Layer: 0
   m_Name: TGVWagon (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -821,7 +810,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: []
-  Train: {fileID: 890025084181339320}
 --- !u!114 &3060727837836500363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -888,7 +876,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: []
-  Train: {fileID: 890025084181339320}
 --- !u!114 &1939399808719079433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1319,7 +1306,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: []
-  Train: {fileID: 890025084181339320}
 --- !u!114 &5662156410366690432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1386,7 +1372,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: []
-  Train: {fileID: 890025084181339320}
 --- !u!114 &2895318962076661066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1453,7 +1438,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: []
-  Train: {fileID: 890025084181339320}
 --- !u!114 &4849182418968289495
 MonoBehaviour:
   m_ObjectHideFlags: 0

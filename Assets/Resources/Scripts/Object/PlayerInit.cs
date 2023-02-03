@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class PlayerInit : MonoBehaviour
 {
+    [SerializeField] private Information info;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject Obj = Instantiate(Resources.Load("Prefabs/Vehicles/Vehicles" + FindObjectOfType<Information>().GetIndex().ToString() ) as GameObject);
+        info = FindObjectOfType<Information>();
+        GameObject temp = Resources.Load("Prefabs/Vehicles/Vehicles" + info.GetIndex().ToString()) as GameObject;
+        GameObject Obj = new GameObject();
+        Obj = Instantiate(temp);
+            //+ info.GetIndex().ToString()) as GameObject; ;
         Obj.name = "Player";
+
         Obj.transform.position = transform.position;
         Obj.transform.parent = transform;
     }

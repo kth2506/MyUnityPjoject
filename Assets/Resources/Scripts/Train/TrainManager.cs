@@ -16,39 +16,25 @@ public class TrainManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> BodyList;
     [SerializeField] private Transform PlayerPosition;
+    [SerializeField] private List<float> BodySizeList;
+    
     private GameObject BoomObject;
 
     private List<int> ScoreList = new List<int>();
     private bool isStop;
-    private bool isFirstStop;
 
     // Start is called before the first frame update
     private void Awake()
     {
         //  Scene이 Stage 일때만 작동
-        if (SceneManager.GetActiveScene().name.Contains("Stage"))
-        {
-
-            isStop = false;
-            isFirstStop = false;
-            
-            foreach(GameObject element in BodyList)
-                meshList.Add(element.GetComponentInChildren<MeshRenderer>());
-
-            BoomObject = Resources.Load("Prefabs/PlayerBoom") as GameObject;
-            TempAudio = GameObject.Find("EffectSound").GetComponent<AudioSource>();
-            
-
-            StationList.Add(GameObject.Find("Station_0"));
-            StationList.Add(GameObject.Find("Station_1"));
-            for (int i = 0; i < StationList.Count; ++i)
-                StartCoroutine(Plus(StationList[i], i));
-        }
-        else
+        if (!SceneManager.GetActiveScene().name.Contains("Stage"))
             GetComponent<TrainManager>().enabled = false;
     }
 
-
+    private void Start()
+    {
+        Initialized();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -219,7 +205,6 @@ public class TrainManager : MonoBehaviour
         }
         else
         {
-            isFirstStop = false;
             foreach (GameObject element in BodyList)
             {
                 CinemachineDollyCart dolly = element.GetComponentInChildren<CinemachineDollyCart>();
@@ -229,9 +214,47 @@ public class TrainManager : MonoBehaviour
 
     }
 
-
-    public void ChangeCourse()
+    private void Initialized()
     {
+        isStop = false;
 
+        foreach (GameObject element in BodyList)
+        {
+            meshList.Add(element.GetComponentInChildren<MeshRenderer>());
+            Collider col = element.GetComponentInChildren<Collider>();
+
+            BodySizeList.Add(col.bounds.max.z - element.transform.position.z);
+            BodySizeList.Add(element.transform.position.z - col.bounds.min.z);
+        }
+
+        for (int i = 0; i < BodyList.Count; ++i)
+        {
+            float temp = 0;
+            for (int j = i * 2 + 1; j < BodySizeList.Count - 1; ++j)
+            {
+                temp += BodySizeList[j];
+                if (j % 2 == 0)
+                    temp += 0.1f;
+            }
+            BodyList[i].GetComponent<BodyController>().SetOffset(temp);
+        }
+
+
+        BoomObject = Resources.Load("Prefabs/PlayerBoom") as GameObject;
+        TempAudio = GameObject.Find("EffectSound").GetComponent<AudioSource>();
+
+
+        GameObject[] stationList = GameObject.FindGameObjectsWithTag("Station");
+
+        if (stationList != null)
+        {
+            foreach (GameObject element in stationList)
+            {
+                StationList.Add(element);
+            }
+            for (int i = 0; i < StationList.Count; ++i)
+                StartCoroutine(Plus(StationList[i], i));
+        }
     }
+
 }
