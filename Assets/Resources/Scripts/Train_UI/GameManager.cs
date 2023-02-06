@@ -78,19 +78,12 @@ public class GameManager : MonoBehaviour
         AudioSource audio = Camera.main.GetComponent<AudioSource>();
         audio.Stop();
         audio.PlayOneShot(Resources.Load("Audio/End Win") as AudioClip);
-        StartCoroutine(Victory());
+        Victory();
     }
 
-    public IEnumerator Victory()
+    public void Victory()
     {
-        float fTime = 0;
-
-        while (fTime <= 2.0f)
-        {
-            fTime += Time.deltaTime;
-            UIPanel.transform.position = Vector3.Lerp(StartPosition.position, EndPosition.position, fTime);
-            yield return null;
-        }
+        UIPanel.GetComponent<Animator>().SetBool("isClear", true);
         Time.timeScale = 0;
         PausePanel.SetActive(true);
         Panel.SetActive(false);

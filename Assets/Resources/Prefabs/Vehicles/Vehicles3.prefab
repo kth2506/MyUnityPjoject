@@ -1429,7 +1429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StationList: []
-  Coin: {fileID: 0}
+  Coin: {fileID: 6662428869203078958, guid: 091d624c886f59e40ac3dc010bd00a5b, type: 3}
   mesh: []
   meshList: []
   TempAudio: {fileID: 0}

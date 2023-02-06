@@ -21,7 +21,7 @@ public class CameraManager : MonoBehaviour
         }
         else if (wheelInput < 0)
         {
-            if (Camera.main.orthographicSize < 70.0f)
+            if (Camera.main.orthographicSize < 60.0f)
             {
                 Camera.main.orthographicSize += 2.0f;
             }

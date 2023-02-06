@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3199283090186721216}
   - component: {fileID: 3199283090183296992}
-  - component: {fileID: 3199283090184426784}
-  - component: {fileID: 4803685523190365207}
+  - component: {fileID: 8833490780866446637}
+  - component: {fileID: 4796946527582445173}
   m_Layer: 0
   m_Name: SM_Env_Track_Straight_02
   m_TagString: Untagged
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3199283090186423264}
   m_Mesh: {fileID: 4300000, guid: 2829ecfbaf79ffe44ab850ad7c6413d1, type: 3}
---- !u!23 &3199283090184426784
+--- !u!23 &8833490780866446637
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0d84307e22717064d928a5b37e9b32cf, type: 2}
+  - {fileID: 2100000, guid: 3bdd658fe573d7b45aac6e82bf30e6c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4803685523190365207
+--- !u!64 &4796946527582445173
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

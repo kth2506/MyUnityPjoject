@@ -23,10 +23,10 @@ public class Score : MonoBehaviour
     public void SetScore(int _PlayerScore)
     {
         PlayerScore += _PlayerScore;
-        StartCoroutine(Increase(PlayerScore, PlayerScore - _PlayerScore));
+        Increase(PlayerScore, PlayerScore - _PlayerScore);
     }
 
-    public IEnumerator Increase(float target, float current)
+    public void Increase(float target, float current)
     {
 
         float duration = 0.5f;
@@ -36,7 +36,6 @@ public class Score : MonoBehaviour
         {
             current += offset * Time.deltaTime*0.1f;
             ScoreText.text = string.Format("{0:n0}", (int)target) + " / " + string.Format("{0:n0}", (int)MaxScore);
-            yield return null;
         }
 
         target = current;

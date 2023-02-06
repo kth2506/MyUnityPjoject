@@ -9,7 +9,8 @@ public class BodyController : MonoBehaviour
 {
     [SerializeField] private List<Transform> target;
     private CinemachineDollyCart dolly;
-
+    private List<GameObject> foundRotary;
+    private float shortDis;
     
     private float offset;
     private int Index;
@@ -29,6 +30,10 @@ public class BodyController : MonoBehaviour
             dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
             offset = 0;
             dolly.m_Speed = 20.0f;
+
+            shortDis = 30.0f;
+            foundRotary = new List<GameObject>(GameObject.FindGameObjectsWithTag("Rotary"));
+            
         }
         else
             GetComponent<BodyController>().enabled = false;
@@ -48,23 +53,37 @@ public class BodyController : MonoBehaviour
     {
         if (dolly.m_Position + 3.0f >= dolly.m_Path.PathLength)
         {
-            if(target.Count > Index + 1 && !target[Index].gameObject.GetComponent<CinemachinePath>().Looped)
+            if (shortDis < 20.0f)
+            {
+                if (foundRotary != null)
+                {
+                    shortDis = Vector3.Distance(gameObject.transform.position, foundRotary[0].transform.position);
+                    GameObject first = foundRotary[0];
+
+                    foreach (GameObject found in foundRotary)
+                    {
+                        float Distance = Vector3.Distance(gameObject.transform.position, found.transform.position);
+
+                        if (Distance < shortDis)
+                        {
+                            first = found;
+                            shortDis = Distance;
+                        }
+                    }
+                    float temp = dolly.m_Path.PathLength - 2.9f;
+                    Index = first.GetComponent<SwitchController>().GetIndex();
+                    dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
+                    dolly.m_Position -= temp;
+                }
+            }
+            else 
+            if (target.Count > Index + 1)
             {
                 float temp = dolly.m_Path.PathLength - 2.9f;
                 Index++;
                 dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
                 dolly.m_Position -= temp;
             }
-            //if(isExpected == true)
-            //{
-            //    float temp = dolly.m_Path.PathLength - 2.9f;
-
-            //    dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
-            //    dolly.m_Position -= temp;
-
-            //    isExpected = false;
-            //}
-            
 
         }
 

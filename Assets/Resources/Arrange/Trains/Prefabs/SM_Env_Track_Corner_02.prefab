@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 40128595955271744}
   - component: {fileID: 40128595951847520}
   - component: {fileID: 40128595952847520}
-  - component: {fileID: 2439283084426178778}
+  - component: {fileID: 4953565483824057798}
   m_Layer: 0
   m_Name: SM_Env_Track_Corner_02
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2439283084426178778
+--- !u!64 &4953565483824057798
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

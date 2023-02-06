@@ -5,7 +5,7 @@ using UnityEngine;
 public class SwitchController : MonoBehaviour
 {
     [SerializeField] private List<int> CourseList;
-
+    [SerializeField] private GameObject Arrow;
     private int Index;
     public void Start()
     {
@@ -15,20 +15,20 @@ public class SwitchController : MonoBehaviour
 
     private void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            // Stop & mesh 
+            if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                Debug.Log(hit.transform);
-                Debug.Log(transform);
                 if (hit.transform == transform)
+                {
                     SetIndex();
+                }
             }
         }
-
     }
 
 
@@ -40,6 +40,7 @@ public class SwitchController : MonoBehaviour
 
     public void SetIndex()
     {
+
         Index++;
 
         if (Index >= CourseList.Count)

@@ -40,10 +40,9 @@ public class TrainManager : MonoBehaviour
     {
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
 
         // Stop & mesh 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out RaycastHit hit))
         {
             if (hit.transform == transform)
             {
@@ -72,6 +71,7 @@ public class TrainManager : MonoBehaviour
                 }
             }
         }
+
     }
 
 
@@ -86,11 +86,6 @@ public class TrainManager : MonoBehaviour
 
             if (Vector3.Distance(_Target.transform.position, PlayerPosition.position) < 18.0f)
             {
-                //if (!isFirstStop)
-                //{
-                //    isFirstStop = true;
-                //    SlowlyStop();
-                //}
 
                 Score score = GameObject.Find("Score").GetComponent<Score>();
                 for (int i = 0; i < ScoreList.Count; ++i)
