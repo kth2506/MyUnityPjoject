@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 0
   m_PositionUnits: 1
   m_Speed: 0
   m_Position: 0
@@ -872,7 +872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 0
   m_PositionUnits: 1
   m_Speed: 0
   m_Position: 0
@@ -938,7 +938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 0
   m_PositionUnits: 1
   m_Speed: 0
   m_Position: 0
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 0
   m_PositionUnits: 1
   m_Speed: 0
   m_Position: 0

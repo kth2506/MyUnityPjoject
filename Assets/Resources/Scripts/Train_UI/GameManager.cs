@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private GameObject Player;
     public static GameManager Instance;
 
+    Animator animator;
     private void Awake()
     {
         if (Instance != null)
@@ -25,7 +26,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-       
     }
 
 
@@ -71,22 +71,39 @@ public class GameManager : MonoBehaviour
 
     public void StageClear()
     {
-
+        ClearPanel.SetActive(true);
         PausePanel.SetActive(true);
         Panel.SetActive(false);
         FindObjectOfType<Information>().SetStar();
         AudioSource audio = Camera.main.GetComponent<AudioSource>();
         audio.Stop();
         audio.PlayOneShot(Resources.Load("Audio/End Win") as AudioClip);
-        Victory();
+        animator = UIPanel.GetComponent<Animator>();
+        animator.SetBool("isClear", true);
+
+
+
+        StartCoroutine(CheckAnimationState());
+        Time.timeScale = 0;
+    }
+
+    IEnumerator CheckAnimationState()
+    {
+        float fTime = 0.0f; 
+        while (fTime < 3.0f)
+        {
+            Debug.Log(fTime);
+            fTime += 0.1f;
+            yield return null;
+        }
+
+        Debug.Log("End");
+        
     }
 
     public void Victory()
     {
-        UIPanel.GetComponent<Animator>().SetBool("isClear", true);
-        Time.timeScale = 0;
-        PausePanel.SetActive(true);
-        Panel.SetActive(false);
+        
     }
 
     public void NextStage()
@@ -97,8 +114,8 @@ public class GameManager : MonoBehaviour
 
     public void PlayerStop()
     {
-        Player = FindObjectOfType<CinemachineController>().gameObject;
-        StartCoroutine(Player.GetComponent<CinemachineController>().SlowlyStop());
+        Player = FindObjectOfType<TrainManager>().gameObject;
+        Player.GetComponent<TrainManager>().SlowlyStop();
     }
 
     public void SceneOption()

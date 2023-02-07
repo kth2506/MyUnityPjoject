@@ -31,7 +31,6 @@ public class BodyController : MonoBehaviour
             offset = 0;
             dolly.m_Speed = 20.0f;
 
-            shortDis = 30.0f;
             foundRotary = new List<GameObject>(GameObject.FindGameObjectsWithTag("Rotary"));
             
         }
@@ -44,39 +43,36 @@ public class BodyController : MonoBehaviour
         dolly.m_Position = offset;
     }
 
-
-    public void SetOffset(float Value)
-    {
-        offset += Value;
-    }
-    void LateUpdate()
+    void Update()
     {
         if (dolly.m_Position + 3.0f >= dolly.m_Path.PathLength)
         {
-            if (shortDis < 20.0f)
+            if (foundRotary.Count > 0)
             {
-                if (foundRotary != null)
+                shortDis = Vector3.Distance(gameObject.transform.position, foundRotary[0].transform.position);
+                GameObject first = foundRotary[0];
+
+                foreach (GameObject found in foundRotary)
                 {
-                    shortDis = Vector3.Distance(gameObject.transform.position, foundRotary[0].transform.position);
-                    GameObject first = foundRotary[0];
+                    float Distance = Vector3.Distance(gameObject.transform.position, found.transform.position);
 
-                    foreach (GameObject found in foundRotary)
+                    if (Distance < shortDis)
                     {
-                        float Distance = Vector3.Distance(gameObject.transform.position, found.transform.position);
-
-                        if (Distance < shortDis)
-                        {
-                            first = found;
-                            shortDis = Distance;
-                        }
+                        first = found;
+                        shortDis = Distance;
                     }
+                }
+
+                if (shortDis < 20.0f)
+                {
                     float temp = dolly.m_Path.PathLength - 2.9f;
                     Index = first.GetComponent<SwitchController>().GetIndex();
                     dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
                     dolly.m_Position -= temp;
+                    return;
                 }
             }
-            else 
+
             if (target.Count > Index + 1)
             {
                 float temp = dolly.m_Path.PathLength - 2.9f;
@@ -84,12 +80,16 @@ public class BodyController : MonoBehaviour
                 dolly.m_Path = target[Index].gameObject.GetComponent<CinemachinePath>();
                 dolly.m_Position -= temp;
             }
-
         }
 
     }
 
-    public void ChangeCourse()
+
+
+
+
+    public void SetOffset(float Value)
     {
+        offset += Value;
     }
 }

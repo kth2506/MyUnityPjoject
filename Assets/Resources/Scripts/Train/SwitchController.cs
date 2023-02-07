@@ -45,7 +45,12 @@ public class SwitchController : MonoBehaviour
 
         if (Index >= CourseList.Count)
             Index = 0;
-
+       
+        GameObject Obj = (Resources.Load("Prefabs/Object/SwitchArrow_" + Index.ToString()) as GameObject);
+        Obj.transform.position = Arrow.transform.position;
+        Destroy(Arrow.gameObject);
+        Arrow = Instantiate(Obj);
+        Arrow.transform.parent = transform;
         Debug.Log("Changed!");
     }
 
