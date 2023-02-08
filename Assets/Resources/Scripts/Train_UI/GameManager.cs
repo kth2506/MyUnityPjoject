@@ -8,12 +8,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject Panel;
     [SerializeField] private GameObject ClearPanel;
     [SerializeField] private GameObject UIPanel;
-    [SerializeField] private List<GameObject> Interface;
-    [SerializeField] private Transform StartPosition;
-    [SerializeField] private Transform EndPosition;
+    [SerializeField] private GameObject PauseButton;
+    [SerializeField] private GameObject StopButton;
     private GameObject Player;
     public static GameManager Instance;
+    private Camera cam;
 
+    private float shakeTime = 2.0f;
+    private float shakeAmount = 10.0f;
     Animator animator;
     private void Awake()
     {
@@ -26,22 +28,39 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        cam = Camera.main;
     }
 
+   
 
-
-    public void EndGame()
+    public IEnumerator EndGame()
     {
+        cam.GetComponent<FollowCamera>().enabled = false;
+
+        Vector3 originPosition = cam.transform.localPosition;
+        float elaspedTime = 0.0f;
+
+        while (elaspedTime < shakeTime)
+        {
+            Vector3 randomPoint = originPosition + Random.insideUnitSphere * shakeAmount;
+            cam.transform.localPosition = Vector3.Lerp(cam.transform.localPosition, randomPoint, Time.deltaTime);
+            yield return new WaitForSeconds(0.1f);
+
+            elaspedTime += 0.1f;
+        }
+        cam.transform.localPosition = originPosition;
+
+
         Time.timeScale = 0;
-        ClearPanel.SetActive(true);
-        //UIPanel.transform.position = Vector2.Lerp(UIPanel.transform.position, new Vector2(960, 540), 10.0f);
+
+        OffUI();
         AudioSource audio = Camera.main.GetComponent<AudioSource>();
         audio.Stop();
         audio.PlayOneShot(Resources.Load("Audio/crash") as AudioClip);
         audio.PlayOneShot(Resources.Load("Audio/End Defeat") as AudioClip);
 
-
     }
+ 
 
     public void RestartGame()
     {
@@ -71,9 +90,7 @@ public class GameManager : MonoBehaviour
 
     public void StageClear()
     {
-        ClearPanel.SetActive(true);
-        PausePanel.SetActive(true);
-        Panel.SetActive(false);
+        OffUI();
         FindObjectOfType<Information>().SetStar();
         AudioSource audio = Camera.main.GetComponent<AudioSource>();
         audio.Stop();
@@ -86,6 +103,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(CheckAnimationState());
         Time.timeScale = 0;
     }
+
 
     IEnumerator CheckAnimationState()
     {
@@ -101,10 +119,17 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void Victory()
+
+    private void OffUI()
     {
-        
+        StopButton.SetActive(false);
+        PauseButton.SetActive(false);
+        ClearPanel.SetActive(true);
+        PausePanel.SetActive(true);
+        Panel.SetActive(false);
     }
+
+
 
     public void NextStage()
     {
@@ -126,4 +151,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Stage");
     }
+
+
+
+
+
 }

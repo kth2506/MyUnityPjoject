@@ -97,7 +97,7 @@
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
     <Compile Include="Assets\Resources\Scripts\Object\SpawnPointList.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\ItemController.cs" />
-    <Compile Include="Assets\Resources\Scripts\Train_UI\Timer.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\Timer.cs" />
     <Compile Include="Assets\Resources\Scripts\Architecture\Person.cs" />
     <Compile Include="Assets\Resources\DownloadResources\Spline Walker Train\Line.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
@@ -116,7 +116,7 @@
     <Compile Include="Assets\Resources\Scripts\Architecture\ObjectPoolManager.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
     <Compile Include="Assets\Resources\Scripts\Fx\Coin.cs" />
-    <Compile Include="Assets\Resources\Scripts\Train_UI\Score.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\Score.cs" />
     <Compile Include="Assets\Resources\DownloadResources\Spline Walker Train\SplineDecorator.cs" />
     <Compile Include="Assets\Resources\Scripts\Train\BodyController.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\Star.cs" />
@@ -130,8 +130,6 @@
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
     <Compile Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
     <Compile Include="Assets\Resources\Scripts\Train_UI\SettingsMenu.cs" />
-    <Compile Include="Assets\Resources\Scripts\UI\PlayerStop.cs" />
-    <Compile Include="Assets\Resources\Scripts\UI\MouseCursor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\DownloadResources\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />

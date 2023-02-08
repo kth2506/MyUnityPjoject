@@ -609,7 +609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &175945382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1508,9 +1508,8 @@ MonoBehaviour:
   Panel: {fileID: 366553835}
   ClearPanel: {fileID: 1664085019}
   UIPanel: {fileID: 821216847}
-  Interface: []
-  StartPosition: {fileID: 1452116756}
-  EndPosition: {fileID: 1921105034}
+  PauseButton: {fileID: 974356450}
+  StopButton: {fileID: 175945381}
 --- !u!4 &436749469
 Transform:
   m_ObjectHideFlags: 0
@@ -3379,6 +3378,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3199283090186721216, guid: 7b5da073a7933f441bc120ac2e57774b, type: 3}
   m_PrefabInstance: {fileID: 2030526647}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &974356450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5493695598910829756, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
+  m_PrefabInstance: {fileID: 5493695598030392164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &982019780
 GameObject:
   m_ObjectHideFlags: 0
@@ -4267,7 +4271,7 @@ MonoBehaviour:
     width: 3.66
   m_Looped: 0
   m_Waypoints:
-  - position: {x: 15, y: 0, z: 50}
+  - position: {x: 15, y: 0, z: 70}
     tangent: {x: 0, y: 0, z: 0}
     roll: 0
   - position: {x: 15, y: 0, z: 12}
@@ -4760,11 +4764,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3199283090186721216, guid: 7b5da073a7933f441bc120ac2e57774b, type: 3}
   m_PrefabInstance: {fileID: 1430740018}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1452116756 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5493695599464611952, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
-  m_PrefabInstance: {fileID: 5493695598030392164}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1462399515
 PrefabInstance:
@@ -6680,7 +6679,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.15098791, g: 0.5432796, b: 0.8207547, a: 0}
+  m_BackGroundColor: {r: 0.16862746, g: 0.2, b: 0.54901963, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -6850,11 +6849,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafd663d1057483428985189e0c4051e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &1921105034 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5493695598860908526, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
-  m_PrefabInstance: {fileID: 5493695598030392164}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1922455866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8230,6 +8224,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1984436590}
+    - target: {fileID: 5493695598411393729, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493695598615160703, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5493695598910829758, guid: 3c25f7ae5498ce24ebf06dae8fc0f508, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -159,7 +159,6 @@ public class TrainManager : MonoBehaviour
         {
             Debug.Log("Collision!!");
 
-            FindObjectOfType<GameManager>().EndGame();
             GameObject Obj = Instantiate(Resources.Load("Prefabs/Explosion") as GameObject);
             Obj.transform.position = PlayerPosition.position;
 
@@ -167,9 +166,12 @@ public class TrainManager : MonoBehaviour
             {
                 element.GetComponent<CinemachineDollyCart>().enabled = false;
                 element.GetComponent<BodyController>().enabled = false;
-                element.GetComponentInChildren<Rigidbody>().AddForce
-                    (transform.forward);
+                element.AddComponent<Rigidbody>();
+                float ran = Random.RandomRange(1000, 1500);
+                element.GetComponent<Rigidbody>().AddForce(new Vector3(ran, ran, ran));
             }
+
+            StartCoroutine(FindObjectOfType<GameManager>().EndGame());
         }
     }
 
