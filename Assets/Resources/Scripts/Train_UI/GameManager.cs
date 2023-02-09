@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject UIPanel;
     [SerializeField] private GameObject PauseButton;
     [SerializeField] private GameObject StopButton;
+    [SerializeField] private GameObject StarImage;
     private GameObject Player;
     public static GameManager Instance;
     private Camera cam;
 
     private float shakeTime = 2.0f;
     private float shakeAmount = 10.0f;
+
     Animator animator;
     private void Awake()
     {
@@ -98,23 +100,26 @@ public class GameManager : MonoBehaviour
         animator = UIPanel.GetComponent<Animator>();
         animator.SetBool("isClear", true);
 
-
-
         StartCoroutine(CheckAnimationState());
-        Time.timeScale = 0;
+        
+
+
+
+
     }
 
 
     IEnumerator CheckAnimationState()
     {
         float fTime = 0.0f; 
-        while (fTime < 3.0f)
+        while (fTime < 2.0f)
         {
             Debug.Log(fTime);
             fTime += 0.1f;
-            yield return null;
+            yield return new WaitForSeconds(0.1f);
         }
-
+        StarImage.GetComponent<Animator>().SetInteger("Star", FindObjectOfType<Timer>().Star);
+        Time.timeScale = 0;
         Debug.Log("End");
         
     }

@@ -167,7 +167,7 @@ public class TrainManager : MonoBehaviour
                 element.GetComponent<CinemachineDollyCart>().enabled = false;
                 element.GetComponent<BodyController>().enabled = false;
                 element.AddComponent<Rigidbody>();
-                float ran = Random.RandomRange(1000, 1500);
+                float ran = Random.Range(1000, 1500);
                 element.GetComponent<Rigidbody>().AddForce(new Vector3(ran, ran, ran));
             }
 
@@ -182,30 +182,21 @@ public class TrainManager : MonoBehaviour
         if (isStop == true)
         {
             GameObject Obj = Instantiate(BoomObject);
-            Obj.transform.localScale *= 1.3f;
             Obj.transform.position = PlayerPosition.position;
             GameObject Obj2 = Instantiate(BoomObject);
             Obj2.transform.position = PlayerPosition.position + new Vector3(2.0f, 0.0f, 0.0f);
-            Obj2.transform.localScale *= 1.3f;
-            isStop = true;
 
-            List<CinemachineDollyCart> dollyList = new List<CinemachineDollyCart>();
             foreach(GameObject element in BodyList)
             {
-                dollyList.Add(element.GetComponentInChildren<CinemachineDollyCart>());
-            }
-            foreach(CinemachineDollyCart element in dollyList)
-            {
-                element.m_Speed = 0.0f;
-            }
+                element.GetComponent<CinemachineDollyCart>().m_Speed = 0.0f;
+            }    
 
         }
         else
         {
             foreach (GameObject element in BodyList)
             {
-                CinemachineDollyCart dolly = element.GetComponentInChildren<CinemachineDollyCart>();
-                dolly.m_Speed = 20.0f;
+               element.GetComponent<CinemachineDollyCart>().m_Speed = 20.0f;
             }
         }
 
